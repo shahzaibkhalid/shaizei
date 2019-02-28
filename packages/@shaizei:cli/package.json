@@ -1,0 +1,21 @@
+{
+  "name": "@shaizei/cli",
+  "version": "1.0.0",
+  "description": "An unapponionated CLI to build React.js apps without tears.",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "react-cli",
+    "create-react-app"
+  ],
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@shaizei/scripts": "^0.1.0",
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0"
+  },
+  "bin": {
+    "shaizei": "index.js"
+  }
+}
