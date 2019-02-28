@@ -1,0 +1,29 @@
+{
+  "name": "@shaizei/babel-preset",
+  "version": "0.1.0",
+  "description": "This package contains shareable babel.js configuration used by the applications created with @shaizei/cli.",
+  "main": "index.js",
+  "keywords": [
+    "babel",
+    "babel-preset",
+    "babel-config"
+  ],
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/runtime": "^7.3.4",
+    "@babel/runtime-corejs2": "^7.3.1",
+    "babel-plugin-emotion": "^10.0.7",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "react-hot-loader": "^4.6.5"
+  }
+}
