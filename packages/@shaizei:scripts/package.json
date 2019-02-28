@@ -1,0 +1,42 @@
+{
+  "name": "@shaizei/scripts",
+  "version": "0.1.0",
+  "description": "This package contains automation task used by the applications created with @shaizei/cli.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaizei/scripts"
+  },
+  "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
+  "maintainers": [
+    "Shahzaib Khalid"
+  ],
+  "license": "MIT",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/shaizei/scripts/issues"
+  },
+  "homepage": "https://github.com/shaizei/scripts#readme",
+  "keywords": [
+    "webpack",
+    "config",
+    "react"
+  ],
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6",
+    "yarn": ">=1.12"
+  },
+  "dependencies": {
+    "@shaizei/babel-preset": "^0.1.0",
+    "@shaizei/eslint-config": "^0.1.0",
+    "cross-spawn": "^6.0.5",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.13.0",
+    "serve": "^10.1.2",
+    "tree-kill": "^1.2.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
