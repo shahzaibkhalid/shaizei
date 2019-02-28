@@ -1,0 +1,15 @@
+/build/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/typings/**
+/templates/**
+/tests/bench/**
+/tests/fixtures/**
+/tests/performance/**
+node_modules/*
+**/node_modules/*
+/tmp/**
+/lib/util/unicode/is-combining-character.js
+test.js
+!.eslintrc.js

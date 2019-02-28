@@ -1,0 +1,58 @@
+{
+  "name": "@shaizei/eslint-config",
+  "version": "0.1.0",
+  "description": "This repository contains shareable ESLint configuration used by the applications created with @shaizei/cli.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaizei/eslint-config"
+  },
+  "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
+  "license": "MIT",
+  "private": false,
+  "maintainers": [
+    "Shahzaib Khalid"
+  ],
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6",
+    "yarn": ">=1.12"
+  },
+  "bugs": {
+    "url": "https://github.com/shaizei/eslint-config/issues"
+  },
+  "homepage": "https://github.com/shaizei/eslint-config#readme",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "shaizei",
+    "react",
+    "prettier"
+  ],
+  "dependencies": {
+    "@shaizei/webpack-config": "^0.1.0",
+    "@babel/core": "^7.2.2",
+    "@typescript-eslint/eslint-plugin": "^1.3.0",
+    "@typescript-eslint/parser": "^1.3.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-emotion": "^10.0.7",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.2.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.0.1",
+    "prettier": "^1.16.4",
+    "typescript": "^3.3.3"
+  },
+  "peerDependencies": {
+    "eslint": ">=5"
+  }
+}
