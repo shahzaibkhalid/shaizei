@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/eslint-config",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "description": "This repository contains shareable ESLint configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {
