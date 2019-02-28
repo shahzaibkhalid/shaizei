@@ -1,0 +1,36 @@
+{
+  "name": "@shaizei/typescript-config",
+  "version": "1.0.0",
+  "description": "This package contains shareable TypeScript compiler configuration used by the applications created with @shaizei/cli.",
+  "main": "tsconfig.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaizei/typescript-config"
+  },
+  "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
+  "license": "MIT",
+  "private": false,
+  "maintainers": [
+    "Shahzaib Khalid"
+  ],
+  "bugs": {
+    "url": "https://github.com/shaizei/typescript-config/issues"
+  },
+  "homepage": "https://github.com/shaizei/typescript-config#readme",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6",
+    "yarn": ">=1.12"
+  },
+  "keywords": [
+    "typescript",
+    "tsc",
+    "tsconfig"
+  ],
+  "dependencies": {
+    "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
+    "@types/react-redux": "^7.0.1",
+    "typescript": "^3.3.3"
+  }
+}
