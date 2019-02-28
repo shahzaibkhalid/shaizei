@@ -1,0 +1,64 @@
+{
+  "name": "@shaizei/webpack-config",
+  "version": "0.1.0",
+  "description": "This package contains shareable webpack configuration used by the applications created with @shaizei/cli.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaizei/shaizei"
+  },
+  "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
+  "maintainers": [
+    "Shahzaib Khalid"
+  ],
+  "homepage": "https://github.com/shaizei/webpack-config#readme",
+  "bugs": {
+    "url": "https://github.com/shaizei/webpack-config/issues"
+  },
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6",
+    "yarn": ">=1.12"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-dev-server",
+    "webpack-config",
+    "shareable-webpack-config"
+  ],
+  "dependencies": {
+    "@shaizei/eslint-config": "^0.1.0",
+    "@babel/core": "^7.2.2",
+    "@babel/runtime-corejs2": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "case-sensitive-paths-webpack-plugin": "^2.2.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "css-loader": "^2.1.0",
+    "directory-named-webpack-plugin": "^4.0.0",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.13.0",
+    "eslint-loader": "^2.1.2",
+    "file-loader": "^3.0.1",
+    "html-webpack-inline-source-plugin": "^0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.6.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "react-hot-loader": "^4.6.5",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.2",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.3",
+    "webpack-bundle-analyzer": "^3.0.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-loader": "^0.0.1",
+    "webpack-manifest-plugin": "^2.0.4",
+    "webpack-merge": "^4.2.1",
+    "webpackbar": "^3.1.5"
+  }
+}
