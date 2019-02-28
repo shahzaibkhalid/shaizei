@@ -1,0 +1,35 @@
+{
+  "name": "@shaizei/prettier-config",
+  "version": "1.0.0",
+  "description": "This repository contains shareable Prettier configuration used by the applications created with @shaizei/cli.",
+  "main": "index.js",
+  "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
+  "maintainers": [
+    "Shahzaib Khalid"
+  ],
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6",
+    "yarn": ">=1.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaizei/prettier-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shaizei/prettier-config/issues"
+  },
+  "keywords": [
+    "prettier",
+    "shaizei",
+    "javascript",
+    "formatting",
+    "react"
+  ],
+  "homepage": "https://github.com/shaizei/prettier-config#readme",
+  "dependencies": {
+    "prettier": "^1.16.4"
+  }
+}
