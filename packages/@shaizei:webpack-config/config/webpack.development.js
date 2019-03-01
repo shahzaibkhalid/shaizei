@@ -1,12 +1,12 @@
 const path = require('path');
+const loadJSONFIle = require('load-json-file');
 
-require('dotenv').config({
-  path: path.resolve(process.cwd(), '.env')
-});
+const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
+
 
 const devServerConfig = require('./webpack.devServer.js');
 
-const checkLintingEveryCompilation = JSON.parse(process.env.checkLintingEveryCompilation);
+const checkLintingOnEveryCompilation = shaizeiConfig.hasOwnProperty('checkLintingOnEveryCompilation') ? shaizeiConfig.checkLintingOnEveryCompilation : false;
 
 const webpackDevConfig = {
   mode: 'development',
@@ -14,7 +14,7 @@ const webpackDevConfig = {
   devServer: devServerConfig,
   module: {
     rules: [
-      checkLintingEveryCompilation ? {
+      checkLintingOnEveryCompilation ? {
         enforce: 'pre',
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: [/(node_modules|bower_components)/],

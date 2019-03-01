@@ -1,8 +1,11 @@
 const path = require('path');
+const loadJSONFIle = require('load-json-file');
 
-require('dotenv').config({
-  path: path.resolve(process.cwd(), '.env')
-});
+const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
+
+// require('dotenv').config({
+//   path: path.resolve(process.cwd(), '.env')
+// });
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -11,7 +14,7 @@ const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const WebpackBar = require('webpackbar');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const isTypeScript = JSON.parse(process.env.isTypeScript);
+const isTypeScript = shaizeiConfig.hasOwnProperty('isTypeScript') ? shaizeiConfig.isTypeScript  : false;
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
@@ -39,7 +42,7 @@ const baseConfig = {
     }),
     new WebpackBar(),
     new HtmlWebpackPlugin({
-      title: process.env.title,
+      title: shaizeiConfig.hasOwnProperty('title') ? shaizeiConfig.title : 'React App | Shaizei',
       filename: 'index.html',
       template: path.resolve(process.cwd(), 'src', 'index.html'),
       favicon: path.resolve(process.cwd(), 'src', 'assets', 'favicon.ico'),
@@ -81,12 +84,8 @@ const baseConfig = {
               attrs: {},
               insertAt: 'top',
               singleton: true,
-              sourceMap: JSON.parse(
-                JSON.parse(process.env.addSourceMaps || true),
-              ),
-              convertToAbsoluteUrls: JSON.parse(
-                JSON.parse(process.env.addSourceMaps || true),
-              ),
+              sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
+              convertToAbsoluteUrls: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
             },
           },
           {
@@ -96,7 +95,7 @@ const baseConfig = {
               import: true,
               modules: false,
               localIdentName: '[hash:base64]',
-              sourceMap: JSON.parse(process.env.addSourceMaps || true),
+              sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
               camelCase: false,
               importLoaders: false,
               exportOnlyLocals: false,

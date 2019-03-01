@@ -1,13 +1,15 @@
 const path = require('path');
+const loadJSONFIle = require('load-json-file');
 
-require('dotenv').config({
-  path: path.resolve(process.cwd(), '.env')
-});
+const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
+// require('dotenv').config({
+//   path: path.resolve(process.cwd(), '.env')
+// });
 
-const isHttps = JSON.parse(process.env.https || false);
-const shouldShowOverlay = JSON.parse(process.env.showErrorOverly || true);
-const port = process.env.port || 3000;
-const host = process.env.host || 'localhost';
+const isHttps = shaizeiConfig.hasOwnProperty('https') ? shaizeiConfig.https : false;
+const shouldShowOverlay = shaizeiConfig.hasOwnProperty('showErrorOverly') ? shaizeiConfig.showErrorOverly : true;
+const port = shaizeiConfig.hasOwnProperty('port') ? shaizeiConfig.port : 3000;
+const host = shaizeiConfig.hasOwnProperty('host') ? shaizeiConfig.host : 'localhost';
 
 const overlayConfig = {
   warnings: true,

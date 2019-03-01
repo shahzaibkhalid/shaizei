@@ -5,18 +5,18 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const loadJSONFIle = require('load-json-file');
 
-require('dotenv').config({
-  path: path.resolve(process.cwd(), '.env')
-});
+const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
-const shouldAddSourceMaps = JSON.parse(process.env.addSourceMaps);
-const isTypeScript = JSON.parse(process.env.isTypeScript);
 
-const webpackProdConfig  = {
+const shouldAddSourceMaps = shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true;
+const isTypeScript = shaizeiConfig.hasOwnProperty('isTypeScript') ? shaizeiConfig.isTypeScript : false;
+
+const webpackProdConfig = {
   mode: 'production',
   bail: true,
-  devtool: shouldAddSourceMaps ? 'source-map': false ,
+  devtool: shouldAddSourceMaps ? 'source-map': false,
   // entry: [
   //   require.resolve('core-js/modules/es6.promise'),
   //   require.resolve('core-js/modules/es6.array.iterator'),
