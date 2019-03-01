@@ -31,5 +31,8 @@
   "homepage": "https://github.com/shaizei/prettier-config#readme",
   "dependencies": {
     "prettier": "^1.16.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
