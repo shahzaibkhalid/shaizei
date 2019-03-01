@@ -32,5 +32,8 @@
     "@types/react-dom": "^16.8.0",
     "@types/react-redux": "^7.0.1",
     "typescript": "^3.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
