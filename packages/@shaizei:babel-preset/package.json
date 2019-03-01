@@ -25,5 +25,8 @@
     "babel-plugin-emotion": "^10.0.7",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "react-hot-loader": "^4.6.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
