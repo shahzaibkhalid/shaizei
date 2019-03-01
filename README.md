@@ -3,6 +3,10 @@
 <p align="center">✨ Monorepo for all the tooling, configurations and a CLI to build scalable React applications
 </p>
 
+# STOP! 🚧 ✋
+
+This software is in very active development, currently is in alpha stages and therefore not advised to be used in production applications.
+
 # About
 
 This repo contains several packages to develop and build scalable React.js apps.
