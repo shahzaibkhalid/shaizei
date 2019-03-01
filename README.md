@@ -5,7 +5,7 @@
 
 # STOP! 🚧 ✋
 
-This software is in very active development, currently is in alpha stages and therefore not advised to be used in production applications.
+This software is in very active development (in alpha stages) and therefore not advised to be used in production applications.
 
 # About
 
