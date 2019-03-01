@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/prettier-config",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "This repository contains shareable Prettier configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
