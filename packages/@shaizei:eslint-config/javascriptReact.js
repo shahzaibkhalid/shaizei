@@ -57,9 +57,23 @@ const eslintConfigForJS = {
     'plugin:jsx-a11y/recommended',
     'plugin:jest/recommended',
     'plugin:import/errors',
-    'plugin:import/warnings'  
+    'plugin:import/warnings',
+    'prettier',
+    'prettier/react'
   ],
   parser: 'babel-eslint',
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: require.resolve('@shaizei/webpack-config/config/webpack.base'),
+        extensions: ['.js', '.jsx']
+      },
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx']
+      }
+    }
+  }
 };
 
 module.exports = eslintConfigForJS;
