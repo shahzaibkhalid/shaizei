@@ -22,7 +22,7 @@ const webpackDevConfig = {
           {
             loader: require.resolve('eslint-loader'),
             options: {
-              cache: true,
+              cache: false,
               eslintPath: require.resolve('eslint'),
               emitError: true,
               emitWarning: true,
