@@ -31,7 +31,6 @@
   "dependencies": {
     "@babel/core": "^7.2.2",
     "@babel/runtime-corejs2": "^7.3.1",
-    "@shaizei/eslint-config": "^0.1.0-alpha.3",
     "babel-loader": "^8.0.5",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "clean-webpack-plugin": "^1.0.1",
