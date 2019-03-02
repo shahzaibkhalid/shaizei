@@ -2,9 +2,6 @@ const path = require('path');
 const loadJSONFIle = require('load-json-file');
 
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
-// require('dotenv').config({
-//   path: path.resolve(process.cwd(), '.env')
-// });
 
 const isHttps = shaizeiConfig.hasOwnProperty('https') ? shaizeiConfig.https : false;
 const shouldShowOverlay = shaizeiConfig.hasOwnProperty('showErrorOverly') ? shaizeiConfig.showErrorOverly : true;
