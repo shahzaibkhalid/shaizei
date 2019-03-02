@@ -9,19 +9,13 @@ const loadJSONFIle = require('load-json-file');
 
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
-
 const shouldAddSourceMaps = shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true;
-const isTypeScript = shaizeiConfig.hasOwnProperty('isTypeScript') ? shaizeiConfig.isTypeScript : false;
+const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.isTypeScript : false;
 
 const webpackProdConfig = {
   mode: 'production',
   bail: true,
   devtool: shouldAddSourceMaps ? 'source-map': false,
-  // entry: [
-  //   require.resolve('core-js/modules/es6.promise'),
-  //   require.resolve('core-js/modules/es6.array.iterator'),
-  //   path.resolve(process.cwd(), 'src', `index.${isTypeScript ? 'tsx' : 'jsx'}`)
-  // ],
   entry: path.resolve(process.cwd(), 'src', `index.${isTypeScript ? 'tsx' : 'jsx'}`),
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
