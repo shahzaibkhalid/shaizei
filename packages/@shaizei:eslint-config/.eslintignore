@@ -12,4 +12,8 @@ node_modules/*
 /tmp/**
 /lib/util/unicode/is-combining-character.js
 test.js
-!.eslintrc.js
+.eslintrc.js
+webpack.config.js
+.prettierrc.js
+babel.config.js
+.babelrc.js
