@@ -1,29 +1,40 @@
 const path = require('path');
 const loadJSONFIle = require('load-json-file');
-
-const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
-
-// require('dotenv').config({
-//   path: path.resolve(process.cwd(), '.env')
-// });
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const WebpackBar = require('webpackbar');
 
+const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
+
 const isProduction = process.env.NODE_ENV === 'production';
-const isTypeScript = shaizeiConfig.hasOwnProperty('isTypeScript') ? shaizeiConfig.isTypeScript  : false;
+const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.isTypeScript  : false;
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
+  }
+];
+const primaryJSTSxLoaders = [
+  {
+    loader: require.resolve('babel-loader'),
+    options: {
+      cacheDirectory: true,
+      cacheCompression: true,
+      cacheIdentifier: process.env.NODE_ENV,
+    },
   }
 ];
 
 if (isProduction) {
   fileHandlingLoaders.push({
     loader: 'image-webpack-loader'
+  });
+}
+
+if (isTypeScript) {
+  primaryJSTSxLoaders.push({
+    loader: require.resolve('ts-loader')
   });
 }
 
@@ -60,19 +71,7 @@ const baseConfig = {
       {
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: [/(node_modules|bower_components)/],
-        use: [
-          {
-            loader: require.resolve('babel-loader'),
-            options: {
-              cacheDirectory: true,
-              cacheCompression: true,
-              cacheIdentifier: process.env.NODE_ENV,
-            },
-          },
-          isTypeScript ? {
-            loader: require.resolve('ts-loader'),
-          }: {}
-        ],
+        use: primaryJSTSxLoaders
       },
       {
         test: /\.css$/,
@@ -139,7 +138,7 @@ const baseConfig = {
       '.scss',
     ],
     alias: {
-      src: path.resolve(process.cwd())
+      src: path.resolve(process.cwd(), 'src')
     },
     modules: [path.resolve(process.cwd(), 'src'), 'node_modules'],
     plugins: [new DirectoryNamedWebpackPlugin()],
