@@ -62,7 +62,9 @@ const eslintConfigForTS = {
     'plugin:jsx-a11y/recommended',
     'plugin:jest/recommended',
     'plugin:import/errors',
-    'plugin:import/warnings'
+    'plugin:import/warnings',
+    'prettier',
+    'prettier/react'
   ],
   parser: '@typescript-eslint/parser',
   settings: {
