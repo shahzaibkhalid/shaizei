@@ -80,4 +80,56 @@ program
   require('@shaizei/scripts').analyze();
 });
 
+program
+.command('eslint-prettier-integration')
+.alias('epi')
+.description('Check integration of ESLint & Prettier.')
+.action(() => {
+  console.log(
+    '\n' +
+    chalk.yellow('Checking ESLint & Prettier integration....') +
+    '\n'
+  );
+  require('@shaizei/scripts').eslintPrettierIntegration();
+});
+
+program
+.command('lint-fix')
+.alias('lf')
+.description('Fix ESLint issues')
+.action(() => {
+  console.log(
+    '\n' +
+    chalk.yellow('Trying to fix common ESLint issuess...') +
+    '\n'
+  );
+  require('@shaizei/scripts').lintFix();
+});
+
+program
+.command('prettier')
+.alias('p')
+.description('Run Prettier')
+.action(() => {
+  console.log(
+    '\n' +
+    chalk.yellow('Running Prettier...') +
+    '\n'
+  );
+  require('@shaizei/scripts').prettier()
+});
+
+program
+.command('prettier-fix')
+.alias('pf')
+.description('Fix Prettier issues')
+.action(() => {
+  console.log(
+    '\n' +
+    chalk.yellow('Trying to fix Prettier formatting issuess...') +
+    '\n'
+  );
+  require('@shaizei/scripts').prettierFix()
+});
+
 program.parse(process.argv);
