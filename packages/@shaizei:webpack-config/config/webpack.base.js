@@ -9,7 +9,7 @@ const WebpackBar = require('webpackbar');
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
 const isProduction = process.env.NODE_ENV === 'production';
-const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.isTypeScript  : false;
+const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
@@ -130,7 +130,7 @@ const baseConfig = {
       '.jsx',
       '.ts',
       '.tsx',
-      'json',
+      '.json',
       '.wasm',
       '.ico',
       '.svg',
@@ -141,7 +141,10 @@ const baseConfig = {
       src: path.resolve(process.cwd(), 'src')
     },
     modules: [path.resolve(process.cwd(), 'src'), 'node_modules'],
-    plugins: [new DirectoryNamedWebpackPlugin()],
+    plugins: [new DirectoryNamedWebpackPlugin({
+      honorIndex: true,
+      include: path.resolve(process.cwd(), 'src')
+    })],
   },
 };
 

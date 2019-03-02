@@ -10,7 +10,7 @@ const loadJSONFIle = require('load-json-file');
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
 const shouldAddSourceMaps = shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true;
-const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.isTypeScript : false;
+const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
 
 const webpackProdConfig = {
   mode: 'production',
