@@ -28,7 +28,7 @@
     "yarn": ">=1.12"
   },
   "dependencies": {
-    "@shaizei/babel-preset": "^0.1.0-alpha.2",
+    "@shaizei/babel-preset": "^0.1.0-alpha.3",
     "@shaizei/eslint-config": "^0.1.0-alpha.5",
     "cross-spawn": "^6.0.5",
     "dotenv": "^6.2.0",
