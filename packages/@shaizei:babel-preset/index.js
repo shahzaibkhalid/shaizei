@@ -71,7 +71,11 @@ const shaizeiBabelPreset = (context, options = {}) => {
   ];
 
   if (options.typescript && options.typescript === true) {
-    presets.push(require.resolve('@babel/preset-typescript'))
+    presets.push(require.resolve('@babel/preset-typescript'));
+  }
+  // keep emotion preset at the end otherwise it won't work :|
+  if (options.emotion && options.emotion === true) {
+    presets.push(require.resolve('@emotion/babel-preset-css-prop'));
   }
 
   if (env === 'production') {
