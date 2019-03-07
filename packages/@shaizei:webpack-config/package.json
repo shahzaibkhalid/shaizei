@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/webpack-config",
-  "version": "0.1.0-alpha.5",
+  "version": "0.1.0-alpha.6",
   "description": "This package contains shareable webpack configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {
@@ -35,6 +35,8 @@
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.0",
+    "deasync": "^0.1.14",
+    "detect-port": "^1.3.0",
     "directory-named-webpack-plugin": "^4.0.0",
     "eslint": "^5.13.0",
     "eslint-loader": "^2.1.2",
@@ -58,9 +60,7 @@
     "webpack-loader": "^0.0.1",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.2.1",
-    "webpackbar": "^3.1.5",
-    "deasync": "^0.1.14",
-    "detect-port": "^1.3.0"
+    "webpackbar": "^3.1.5"
   },
   "publishConfig": {
     "access": "public"
