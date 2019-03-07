@@ -1,17 +1,26 @@
 const path = require('path');
 const loadJSONFIle = require('load-json-file');
+const getFreePort = require('../utils/getFreePort.js');
 
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
 const isHttps = shaizeiConfig.hasOwnProperty('https') ? shaizeiConfig.https : false;
 const shouldShowOverlay = shaizeiConfig.hasOwnProperty('showErrorOverly') ? shaizeiConfig.showErrorOverly : true;
-const port = shaizeiConfig.hasOwnProperty('port') ? shaizeiConfig.port : 3000;
+const defaultPort = shaizeiConfig.hasOwnProperty('defaultPort') ? shaizeiConfig.defaultPort : 3000;
 const host = shaizeiConfig.hasOwnProperty('host') ? shaizeiConfig.host : 'localhost';
 
 const overlayConfig = {
   warnings: true,
   errors: true,
 };
+
+const freePort = getPort(defaultPort);
+
+if (defaultPort !== freePort) {
+  console.log(
+    `\n\nYour preferred default port (${defaultPort}) is already busy, falling over to ${freePort}.`
+  );
+}
 
 const serverConfig = {
   open: true,
@@ -22,7 +31,7 @@ const serverConfig = {
   compress: true,
   overlay: shouldShowOverlay ? overlayConfig : false,
   host,
-  port,
+  port: defaultPort === freePort ? defaultPort: freePort,
   https: isHttps,
   historyApiFallback: {
     disableDotRule: true,
