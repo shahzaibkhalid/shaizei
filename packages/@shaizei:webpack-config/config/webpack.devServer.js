@@ -14,11 +14,11 @@ const overlayConfig = {
   errors: true,
 };
 
-const freePort = getPort(defaultPort);
+const freePort = getFreePort(defaultPort);
 
 if (defaultPort !== freePort) {
   console.log(
-    `\n\nYour preferred default port (${defaultPort}) is already busy, falling over to ${freePort}.`
+    `\nYour preferred default port (${defaultPort}) is already busy, starting server at ${freePort}.`
   );
 }
 
