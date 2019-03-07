@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/scripts",
-  "version": "0.1.0-alpha.7",
+  "version": "0.1.0-alpha.8",
   "description": "This package contains automation task used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {

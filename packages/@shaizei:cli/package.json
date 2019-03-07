@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/cli",
-  "version": "0.1.0-alpha.7",
+  "version": "0.1.0-alpha.8",
   "description": "An unapponionated CLI to build React.js apps without tears.",
   "main": "index.js",
   "keywords": [
