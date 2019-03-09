@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
+require('./utils/satisfyNodeVersion')();
+
 const program = require('commander');
 const chalk = require('chalk');
+const createApp = require('./utils/createApp');
 
 program
   .version('1.0.0')
@@ -10,9 +13,27 @@ program
 program
   .command('new <projectName>')
   .alias('n')
+  .option('--typescript', 'Create React-TypeScript application.')
   .description('Create new project')
-  .action(projectName => {
-    console.log('*_*', projectName);
+  .action((projectName, options) => {
+    satisfyNodeVersion();
+    const prefix = chalk.green('[@shaizei/cli]');
+    const jsStarterName = 'shaizei-starter-javascript';
+    const tsStarterName = 'shaizei-starter-typescript';
+    const jsStarterURL = 'https://github.com/shahzaibkhalid/shaizei-starter-javascript.git';
+    const tsStarterURL = 'https://github.com/shahzaibkhalid/shaizei-starter-typescript.git';
+    const spawnOptions = { shell: true };
+    
+    createApp(
+      projectName,
+      options.typescript,
+      jsStarterName,
+      tsStarterName,
+      jsStarterURL,
+      tsStarterURL,
+      spawnOptions,
+      prefix
+    );
   })
 
 program
@@ -38,7 +59,7 @@ program
     chalk.green('Running ESLint...') +
     '\n'
   );
-  require('@shaizei/scripts/scripts/lint')()
+  require('@shaizei/scripts').lint();
 });
 
 program
@@ -64,7 +85,7 @@ program
     chalk.yellow('Building production bundle...') +
     '\n'
   );
-  require('@shaizei/scripts/scripts/build')();
+  require('@shaizei/scripts').build();
 });
 
 program
