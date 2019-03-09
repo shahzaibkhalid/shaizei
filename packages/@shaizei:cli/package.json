@@ -13,7 +13,8 @@
   "dependencies": {
     "@shaizei/scripts": "^0.1.0-alpha.8",
     "chalk": "^2.4.2",
-    "commander": "^2.19.0"
+    "commander": "^2.19.0",
+    "del": "^4.0.0"
   },
   "bin": {
     "shaizei": "index.js"
