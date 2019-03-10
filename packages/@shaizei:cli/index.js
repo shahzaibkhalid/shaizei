@@ -16,7 +16,6 @@ program
   .option('--typescript', 'Create React-TypeScript application.')
   .description('Create new project')
   .action((projectName, options) => {
-    satisfyNodeVersion();
     const prefix = chalk.green('[@shaizei/cli]');
     const jsStarterName = 'shaizei-starter-javascript';
     const tsStarterName = 'shaizei-starter-typescript';

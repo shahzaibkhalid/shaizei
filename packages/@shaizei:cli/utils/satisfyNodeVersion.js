@@ -15,8 +15,8 @@ const satisfyNodeVersion = () => {
           'Please update your version of Node.'
       )
     );
+    process.exit(1);
   };
-  process.exit(1);
 };
 
 module.exports = satisfyNodeVersion;
