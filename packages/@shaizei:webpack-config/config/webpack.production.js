@@ -11,11 +11,12 @@ const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.j
 
 const shouldAddSourceMaps = shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true;
 const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
+const prodSourceMap = shaizeiConfig.hasOwnProperty('webpackProdSourceMap') ? shaizeiConfig.webpackProdSourceMap : 'source-map';
 
 const webpackProdConfig = {
   mode: 'production',
   bail: true,
-  devtool: shouldAddSourceMaps ? 'source-map': false,
+  devtool: shouldAddSourceMaps ? prodSourceMap : false,
   entry: path.resolve(process.cwd(), 'src', `index.${isTypeScript ? 'tsx' : 'jsx'}`),
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
