@@ -10,6 +10,7 @@ const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.j
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
+const shouldUseCSSModules = shaizeiConfig.hasOwnProperty('cssModules') ? shaizeiConfig.cssModules : false;
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
@@ -92,10 +93,10 @@ const baseConfig = {
             options: {
               url: true,
               import: true,
-              modules: false,
-              localIdentName: '[hash:base64]',
+              modules: shouldUseCSSModules,
+              localIdentName: '[name]-[hash:base64:5]',
               sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
-              camelCase: false,
+              camelCase: shouldUseCSSModules,
               importLoaders: false,
               exportOnlyLocals: false,
             },
