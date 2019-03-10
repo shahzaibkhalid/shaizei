@@ -10,7 +10,7 @@ const emitLintingErrors = shaizeiConfig.hasOwnProperty('emitLintingErrors') ? sh
 
 const webpackDevConfig = {
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   devServer: devServerConfig,
   module: {
     rules: [
