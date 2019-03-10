@@ -1,16 +1,15 @@
 const path = require('path');
 const loadJSONFIle = require('load-json-file');
+const devServerConfig = require('./webpack.devServer.js');
 
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
-
-const devServerConfig = require('./webpack.devServer.js');
-
 const emitLintingErrors = shaizeiConfig.hasOwnProperty('emitLintingErrors') ? shaizeiConfig.emitLintingErrors : false;
+const devSourceMap = shaizeiConfig.hasOwnProperty('webpackDevSourceMap') ? shaizeiConfig.webpackDevSourceMap : 'cheap-module-source-map';
 
 const webpackDevConfig = {
   mode: 'development',
-  devtool: 'cheap-module-source-map',
+  devtool: devSourceMap,
   devServer: devServerConfig,
   module: {
     rules: [
