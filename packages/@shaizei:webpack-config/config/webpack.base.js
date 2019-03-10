@@ -27,6 +27,18 @@ const primaryJSTSxLoaders = [
   }
 ];
 
+const styleLoader = {
+  loader: isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+  options: isProduction ? {} : {
+    hmr: true,
+    attrs: {},
+    insertAt: 'top',
+    singleton: true,
+    sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
+    convertToAbsoluteUrls: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
+  },
+};
+
 if (isProduction) {
   fileHandlingLoaders.push({
     loader: 'image-webpack-loader'
@@ -77,17 +89,7 @@ const baseConfig = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-            options: isProduction ? {} : {
-              hmr: true,
-              attrs: {},
-              insertAt: 'top',
-              singleton: true,
-              sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
-              convertToAbsoluteUrls: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
-            },
-          },
+          styleLoader,
           {
             loader: 'css-loader',
             options: {
@@ -101,6 +103,21 @@ const baseConfig = {
               exportOnlyLocals: false,
             },
           },
+        ]
+      },
+      {
+        test: /\.(sass|scss)$/,
+        use: [
+          styleLoader,
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
+            }
+          }
         ],
       },
       {
@@ -118,7 +135,7 @@ const baseConfig = {
             ],
           },
           {
-            exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/, /\.css$/],
+            exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/, /\.css$/, /\.scss$/],
             use: fileHandlingLoaders
           },
         ],
@@ -136,7 +153,9 @@ const baseConfig = {
       '.ico',
       '.svg',
       '.ttf',
+      '.css',
       '.scss',
+      '.sass'
     ],
     alias: {
       src: path.resolve(process.cwd(), 'src')
