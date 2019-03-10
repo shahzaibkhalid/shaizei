@@ -6,7 +6,7 @@ const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.j
 
 const devServerConfig = require('./webpack.devServer.js');
 
-const checkLintingOnEveryCompilation = shaizeiConfig.hasOwnProperty('checkLintingOnEveryCompilation') ? shaizeiConfig.checkLintingOnEveryCompilation : false;
+const emitLintingErrors = shaizeiConfig.hasOwnProperty('emitLintingErrors') ? shaizeiConfig.emitLintingErrors : false;
 
 const webpackDevConfig = {
   mode: 'development',
@@ -14,7 +14,7 @@ const webpackDevConfig = {
   devServer: devServerConfig,
   module: {
     rules: [
-      checkLintingOnEveryCompilation ? {
+      emitLintingErrors ? {
         enforce: 'pre',
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: [/(node_modules|bower_components)/],
