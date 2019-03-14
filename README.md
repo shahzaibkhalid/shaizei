@@ -48,7 +48,7 @@ npm install @shaizei/cli -g
 In order to generate a React-JavaScript app, named as `my-demo-app`, run the following command:
 
 ```shell
-  shaizei new my-demo-app
+shaizei new my-demo-app
 ```
 
 In order to generate a React-TypeScript app, named as `my-demo-app`, run the following command:
