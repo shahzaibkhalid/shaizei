@@ -45,17 +45,25 @@ npm install @shaizei/cli -g
 
 ## Scaffolding a new App
 
+### React-JavaScript
+
 In order to generate a React-JavaScript app, named as `my-demo-app`, run the following command:
 
 ```shell
 shaizei new my-demo-app
 ```
 
+If you want to look into the application that will be created by this command, take a look at [shaizei-starter-javascript](https://github.com/shahzaibkhalid/shaizei-starter-javascript).
+
+### React-TypeScript
+
 In order to generate a React-TypeScript app, named as `my-demo-app`, run the following command:
 
 ```shell
 shaizei new my-demo-app --typescript
 ```
+
+If you want to look into the application that will be created by this command, take a look at [shaizei-starter-typescript](https://github.com/shahzaibkhalid/shaizei-starter-typescript).
 
 This will generate a new application for you in current directory.
 
