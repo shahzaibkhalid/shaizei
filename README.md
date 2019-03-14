@@ -131,3 +131,16 @@ You can also configure other tools in development and production builds pipeline
 ## Contributing
 
 Please take a look at [CONTRIBUTING.md](./CONTRIBUTING.md) for more information on how you can contribute to this project.
+
+## Inspiration
+
+There exists many other React CLIs, why another one? 🤔
+
+* **Maintainable configurations**  
+Instead of having the configurations per project basis, I wanted to move my configurations to a centralize location (separate packages) so that I can maintain it properly. Instead of having 100 different configurations inside 100 different projects, if I fix one thing in my configuration, I'd just release a new version and then update my package in all those projects.
+
+* **Cleaner codebase**  
+I don't know about you, but I strictly don't like bloated `package.json` with plenty of `devDependencies` that are directly related to configurations and not to your actual application. Also, having long `scripts` in `package.json` bloats your application that I personally wanted to clean out with `shaizei`.
+
+* **Extensible configurations with sensible defaults**  
+We can abstract away our configurations into separate packages with sensible defaults but then how can we extend those configurations? This has been my main goal while building `shaizei` that all tooling must be abstracted yet it must be very extensible at the core. Therefore, all the common tools are configurable. Please checkout [Configuring other tools](#configuring-other-tools) for more information.
