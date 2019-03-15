@@ -46,8 +46,6 @@ const shaizeiBabelPreset = (context, options = {}) => {
     [
       require.resolve('@babel/preset-react'),
       {
-        pragma: 'React.createElement',
-        pragmaFrag: 'React.Fragment',
         useBuiltIns: false,
         development: env === 'development' ? true : false,
         throwIfNamespace: true,
