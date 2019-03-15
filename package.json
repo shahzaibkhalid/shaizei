@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaizei/shaizei"
+    "url": "https://github.com/shahzaibkhalid/shaizei"
   },
   "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
   "contributors": [
@@ -13,9 +13,9 @@
   "maintainers": [
     "Shahzaib Khalid"
   ],
-  "homepage": "https://github.com/shaizei/shaizei#readme",
+  "homepage": "https://github.com/shahzaibkhalid/shaizei#readme",
   "bugs": {
-    "url": "https://github.com/shaizei/shaizei/issues"
+    "url": "https://github.com/shahzaibkhalid/shaizei/issues"
   },
   "engines": {
     "node": ">=10",
