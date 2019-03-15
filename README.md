@@ -138,7 +138,7 @@ You can also configure other tools in development and production builds pipeline
 
 ## Contributing
 
-Please take a look at [CONTRIBUTING.md](./CONTRIBUTING.md) for more information on how you can contribute to this project.
+Please take a look at [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information on how you can contribute to this project.
 
 ## Inspiration
 
