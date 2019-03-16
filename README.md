@@ -136,6 +136,19 @@ You can also configure other tools in development and production builds pipeline
 * [Prettier](./packages/@shaizei:prettier-config/README.md)
 * [TypeScript](./packages/@shaizei:typescript-config/README.md)
 
+## Opinions
+
+Although, apps created with `@shaizei/cli` does include sensible defaults when it comes to configurations. But at its heart, every tool is super configurable. Check more about configuring individual tools in pipelines in [Configuring other tools](#configuring-other-tools) section.
+
+There are some opinions, however:
+
+* Application-specific code must live within `src` directory.
+* `src` directory must live at the root of project directory.
+* The starting point of JavaScript-React project, `index.jsx` must live at the root of `src` directory.
+* The starting point of TypeScript-React project, `index.tsx` must live at the root of `src` directory.
+* The only HTML file `index.html` in which React  app will be rendered, must live at the root of `src` directory.
+* There must be an `assets` directory at the root of `src` and app favicon (notably `favicon.ico`) must live at the root of `assets` directory.
+
 ## Contributing
 
 Please take a look at [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information on how you can contribute to this project.
