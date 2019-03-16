@@ -144,8 +144,8 @@ There are some opinions, however:
 
 * Application-specific code must live within `src` directory.
 * `src` directory must live at the root of project directory.
-* The starting point of JavaScript-React project, `index.jsx` must live at the root of `src` directory.
-* The starting point of TypeScript-React project, `index.tsx` must live at the root of `src` directory.
+* The starting point of JavaScript-React project must be `index.jsx` and it must live at the root of `src` directory.
+* The starting point of TypeScript-React project must be `index.tsx` and it must live at the root of `src` directory.
 * The only HTML file `index.html` in which React  app will be rendered, must live at the root of `src` directory.
 * There must be an `assets` directory at the root of `src` and app favicon (notably `favicon.ico`) must live at the root of `assets` directory.
 
