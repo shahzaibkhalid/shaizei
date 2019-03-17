@@ -8,7 +8,7 @@ const prettierConfig = {
   trailingComma: 'all',
   bracketSpacing: true,
   jsxBracketSameLine: false,
-  arrowParens: 'avoid',
+  arrowParens: 'always',
   rangeStart: 0,
   rangeEnd: Infinity,
   insertPragma: false,
