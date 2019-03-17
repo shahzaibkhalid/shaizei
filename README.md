@@ -150,7 +150,7 @@ There are some opinions, however:
 * The only HTML file `index.html` in which React  app will be rendered, must live at the root of `src` directory.
 * There must be an `assets` directory at the root of `src` and app favicon (notably `favicon.ico`) must live at the root of `assets` directory.
 
-Note that the apps scaffolded with `@shaizei/cli` already follow the opinions described above. However if you try to violate them, you'll be prompted about what you're doing wrong and what you should do to fix.
+Note that the apps scaffolded with `@shaizei/cli` already follow the opinions described above. However, these rules will be validated every time you run a standard `@shaizei/cli` command and if you try to violate them, you'll be prompted about what you're doing wrong and what you should do to fix.
 
 ## Contributing
 
