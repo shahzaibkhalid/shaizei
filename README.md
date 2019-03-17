@@ -142,6 +142,7 @@ Although, apps created with `@shaizei/cli` does include sensible defaults when i
 
 There are some opinions, however:
 
+* `shaizeirc.json` file must exist at the root of project directory.
 * Application-specific code must live within `src` directory.
 * `src` directory must live at the root of project directory.
 * The starting point of JavaScript-React project must be `index.jsx` and it must live at the root of `src` directory.
