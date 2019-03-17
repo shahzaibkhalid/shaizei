@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 
-require('./utils/satisfyNodeVersion')();
+require('./utils/validateNodeVersion')();
+const {
+  entryValidation,
+  validateBuildDirExists,
+  validateStatsJSONExists
+} = require('./utils/validateOpinions');
+
+entryValidation();
 
 const program = require('commander');
 const chalk = require('chalk');
@@ -66,6 +73,7 @@ program
 .alias('s')
 .description('Serve production bundle.')
 .action(() => {
+  validateBuildDirExists();
   console.log(
     '\n' +
     chalk.yellow('Serving production bundle...') +
@@ -92,6 +100,7 @@ program
 .alias('a')
 .description('Analyze your production bundle.')
 .action(() => {
+  validateStatsJSONExists();
   console.log(
     '\n' +
     chalk.yellow('Preparing production bundle and running analyzer...') +
