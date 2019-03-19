@@ -168,6 +168,11 @@ program
   require('@shaizei/scripts').prettierFix();
 });
 
+program.on('command:*', function () {
+  console.error('Invalid command: %s\nSee --help for a list of available commands.', program.args.join(' '));
+  process.exit(1);
+});
+
 program.parse(process.argv);
 
 if (program.args.length === 0) {
