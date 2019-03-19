@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-### 1. Installation:
+### 1. Installation
 
 Using Yarn:
 
@@ -18,7 +18,7 @@ Using npm:
   npm install @shaizei/webpack-config webpack webpack-dev-server webpack-cli --save-dev
 ```
 
-### 2. Usage:
+### 2. Usage
 
 * Create a new `webpack.config.js` at the root directory of your project.
 * Import the config function from `@shaizei/webpack-config` package.
