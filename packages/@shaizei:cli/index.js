@@ -7,21 +7,19 @@ const {
   validateStatsJSONExists
 } = require('./utils/validateOpinions');
 
-entryValidation();
-
 const program = require('commander');
 const chalk = require('chalk');
 const createApp = require('./utils/createApp');
 
 program
-  .version('1.0.0')
-  .description('Create React Apps with tears.')
+  .version('0.1.0-alpha.11')
+  .description('A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.')
 
 program
   .command('new <projectName>')
   .alias('n')
-  .option('--typescript', 'Create React-TypeScript application.')
-  .description('Create new project')
+  .option('-t|--typescript', 'Create React-TypeScript application.')
+  .description('Create new React application.')
   .action((projectName, options) => {
     const prefix = chalk.green('[@shaizei/cli]');
     const jsStarterName = 'shaizei-starter-javascript';
@@ -45,8 +43,9 @@ program
 program
 .command('develop')
 .alias('d')
-.description('Start development server')
+.description('Start development server.')
 .action(() => {
+  entryValidation();
   console.log(
     '\n' +
     chalk.green('Starting development server...') +
@@ -58,8 +57,9 @@ program
 program
 .command('lint')
 .alias('l')
-.description('Lint the code')
+.description(`Run linter on 'src' directory.`)
 .action(() => {
+  entryValidation();
   console.log(
     '\n' +
     chalk.green('Running ESLint...') +
@@ -73,6 +73,7 @@ program
 .alias('s')
 .description('Serve production bundle.')
 .action(() => {
+  entryValidation();
   validateBuildDirExists();
   console.log(
     '\n' +
@@ -87,6 +88,7 @@ program
 .alias('b')
 .description('Build production bundle.')
 .action(() => {
+  entryValidation();
   console.log(
     '\n' +
     chalk.yellow('Building production bundle...') +
@@ -98,8 +100,9 @@ program
 program
 .command('analyze')
 .alias('a')
-.description('Analyze your production bundle.')
+.description('Analyze production bundle.')
 .action(() => {
+  entryValidation();
   validateStatsJSONExists();
   console.log(
     '\n' +
@@ -114,6 +117,7 @@ program
 .alias('epi')
 .description('Check integration of ESLint & Prettier.')
 .action(() => {
+  entryValidation();
   console.log(
     '\n' +
     chalk.yellow('Checking ESLint & Prettier integration....') +
@@ -125,8 +129,9 @@ program
 program
 .command('lint-fix')
 .alias('lf')
-.description('Fix ESLint issues')
+.description('Resolve ESLint fixable issues.')
 .action(() => {
+  entryValidation();
   console.log(
     '\n' +
     chalk.yellow('Trying to fix common ESLint issuess...') +
@@ -138,27 +143,33 @@ program
 program
 .command('prettier')
 .alias('p')
-.description('Run Prettier')
+.description(`Run Prettier on 'src' directory.`)
 .action(() => {
+  entryValidation();
   console.log(
     '\n' +
     chalk.yellow('Running Prettier...') +
     '\n'
   );
-  require('@shaizei/scripts').prettier()
+  require('@shaizei/scripts').prettier();
 });
 
 program
 .command('prettier-fix')
 .alias('pf')
-.description('Fix Prettier issues')
+.description(`Fix Prettier issues in 'src' directory.`)
 .action(() => {
+  entryValidation();
   console.log(
     '\n' +
     chalk.yellow('Trying to fix Prettier formatting issuess...') +
     '\n'
   );
-  require('@shaizei/scripts').prettierFix()
+  require('@shaizei/scripts').prettierFix();
 });
 
 program.parse(process.argv);
+
+if (program.args.length === 0) {
+  program.help();
+}
