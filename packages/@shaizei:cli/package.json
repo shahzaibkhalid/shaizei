@@ -1,7 +1,7 @@
 {
   "name": "@shaizei/cli",
   "version": "0.1.0-alpha.11",
-  "description": "An unapponionated CLI to build React.js apps without tears.",
+  "description": "A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.",
   "main": "index.js",
   "keywords": [
     "react",
