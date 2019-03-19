@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-### 1. Installation:
+### 1. Installation
 
 Using Yarn:
 
@@ -19,7 +19,7 @@ Using npm:
 ```
 
 
-### 2. Usage:
+### 2. Usage
 
 * Create a new `tsconfig.js` at the root directory of your project.
 * Extend the config from `@shaizei/typescript-config`
