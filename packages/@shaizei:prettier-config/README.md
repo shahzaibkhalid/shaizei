@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-### 1. Installation:
+### 1. Installation
 
 Using Yarn:
 
@@ -18,7 +18,7 @@ Using npm:
   npm install @shaizei/prettier-config --save-dev
 ```
 
-### 2. Usage:
+### 2. Usage
 
 * Create a new file and name it as `prettier.config.js`
 * Just import `@shaizei/prettier-config` and export it.
