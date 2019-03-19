@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-### 1. Installation:
+### 1. Installation
 
 Using Yarn:
 
@@ -18,7 +18,7 @@ Using npm:
   npm install @shaizei/eslint-config --save-dev
 ```
 
-### 2. Usage:
+### 2. Usage
 
 * Create a new file and name it as `.eslintrc.js`
 * Import relevant config file from `@shaizei/eslint-config` and just export it as follows.
@@ -40,6 +40,7 @@ module.exports = require('@shaizei/eslint-config').typescriptReact;
 ```sh
   cat ./node_modules/@shaizei/eslint-config/.eslintignore >> .eslintignore
 ```
+
 ## Override Default Config
 
 If you want to override the default configuration, then add the following code in `.eslintrc.js` file:
