@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-### 1. Installation:
+### 1. Installation
 
 Using Yarn:
 
@@ -18,7 +18,7 @@ Using npm:
   npm install @shaizei/babel-preset --save-dev
 ```
 
-### 2. Usage:
+### 2. Usage
 
 * Create a new `.babelrc` file
 * Add `@shaizei/babel-preset` as follows:
