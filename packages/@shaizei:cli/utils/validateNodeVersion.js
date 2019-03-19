@@ -4,7 +4,7 @@ const currentNodeVersion = process.versions.node;
 const semver = currentNodeVersion.split('.');
 const major = semver[0];
 
-const satisfyNodeVersion = () => {
+const validateNodeVersion = () => {
   if (major < 10) {
     console.error(
       chalk.red(
@@ -19,4 +19,4 @@ const satisfyNodeVersion = () => {
   };
 };
 
-module.exports = satisfyNodeVersion;
+module.exports = validateNodeVersion;
