@@ -14,6 +14,7 @@ const createApp = require('./utils/createApp');
 program
   .version('0.1.0-alpha.11')
   .description('A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.')
+  .usage('[command] [options]')
 
 program
   .command('new <projectName>')
