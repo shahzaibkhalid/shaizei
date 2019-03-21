@@ -168,3 +168,7 @@ I don't know about you, but I strictly don't like bloated `package.json` with pl
 
 * **Extensible configurations with sensible defaults**  
 We can abstract away our configurations into separate packages with sensible defaults but then how can we extend those configurations? This has been my main goal while building `shaizei` that all tooling must be abstracted yet it must be very extensible at the core. Therefore, all the common tools are configurable. Please checkout [Configuring other tools](#configuring-other-tools) for more information.
+
+## License
+
+`shaizei` is released under the [MIT License](./LICENSE.md).
