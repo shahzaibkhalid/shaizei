@@ -23,6 +23,7 @@
     "yarn": ">=1.12"
   },
   "devDependencies": {
-    "lerna": "^3.13.1"
+    "lerna": "^3.13.1",
+    "lerna-changelog": "^0.8.2"
   }
 }
