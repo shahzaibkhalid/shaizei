@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/cli",
-  "version": "0.1.0-alpha.11",
+  "version": "0.1.0-beta.1",
   "description": "A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.",
   "main": "index.js",
   "keywords": [
@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@shaizei/scripts": "^0.1.0-alpha.9",
+    "@shaizei/scripts": "^0.1.0-beta.1",
     "chalk": "^2.4.2",
     "commander": "^2.19.0",
     "del": "^4.0.0",
