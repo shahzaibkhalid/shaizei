@@ -10,9 +10,10 @@ const {
 const program = require('commander');
 const chalk = require('chalk');
 const createApp = require('./utils/createApp');
+const packageJSON = require('./package.json');
 
 program
-  .version('0.1.0-alpha.11')
+  .version(packageJSON.version)
   .description('A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.')
   .usage('[command] [options]')
 
