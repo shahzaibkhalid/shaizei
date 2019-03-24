@@ -1,6 +1,7 @@
 const serve = () => {
-  const { spawn } = require('child_process');
-  spawn(
+  const spawn = require('cross-spawn');
+  
+  spawn.sync(
     "./node_modules/@shaizei/scripts/node_modules/.bin/serve -s build",
     {
       shell: true,
