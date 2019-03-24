@@ -79,6 +79,8 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-#.vscode
-
+#.vscode metadata
 .vscode/
+
+# lerna-changelog directory
+.changelog/
