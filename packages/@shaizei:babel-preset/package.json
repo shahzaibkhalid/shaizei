@@ -3,11 +3,19 @@
   "version": "0.1.0-beta.1",
   "description": "This package contains shareable babel.js configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shahzaibkhalid/shaizei"
+  },
   "keywords": [
     "babel",
     "babel-preset",
     "babel-config"
   ],
+  "bugs": {
+    "url": "https://github.com/shahzaibkhalid/shaizei/issues"
+  },
+  "homepage": "https://www.npmjs.com/package/@shaizei/babel-preset",
   "license": "MIT",
   "private": false,
   "dependencies": {
