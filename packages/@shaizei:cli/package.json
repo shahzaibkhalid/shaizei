@@ -3,11 +3,19 @@
   "version": "0.1.0-beta.1",
   "description": "A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shahzaibkhalid/shaizei"
+  },
   "keywords": [
     "react",
     "react-cli",
     "create-react-app"
   ],
+  "bugs": {
+    "url": "https://github.com/shahzaibkhalid/shaizei/issues"
+  },
+  "homepage": "https://www.npmjs.com/package/@shaizei/cli",
   "license": "MIT",
   "private": false,
   "dependencies": {
