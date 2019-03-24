@@ -1,6 +1,7 @@
 const analyze = () => {
-  const { spawn } = require('child_process');
-  spawn(
+  const spawn = require('cross-spawn');
+  
+  spawn.sync(
     "./node_modules/@shaizei/webpack-config/node_modules/.bin/webpack-bundle-analyzer build/stats/stats.json build",
     {
       shell: true,

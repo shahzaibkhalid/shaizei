@@ -1,10 +1,10 @@
 const develop = () => {
-  const { spawn } = require('child_process');
+  const spawn = require('cross-spawn');
   
   process.env.NODE_ENV = 'development';
   process.env.BABEL_ENV = 'development';
 
-  spawn(
+  spawn.sync(
     "./node_modules/.bin/webpack-dev-server --hot --inline",
     {
       shell: true,
