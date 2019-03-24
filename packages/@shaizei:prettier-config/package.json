@@ -16,10 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaizei/prettier-config.git"
+    "url": "https://github.com/shahzaibkhalid/shaizei"
   },
   "bugs": {
-    "url": "https://github.com/shaizei/prettier-config/issues"
+    "url": "https://github.com/shahzaibkhalid/shaizei/issues"
   },
   "keywords": [
     "prettier",
@@ -28,7 +28,7 @@
     "formatting",
     "react"
   ],
-  "homepage": "https://github.com/shaizei/prettier-config#readme",
+  "homepage": "https://www.npmjs.com/package/@shaizei/prettier-config",
   "dependencies": {
     "prettier": "^1.16.4"
   },

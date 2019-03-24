@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaizei/scripts"
+    "url": "https://github.com/shahzaibkhalid/shaizei"
   },
   "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
   "maintainers": [
@@ -14,9 +14,9 @@
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://github.com/shaizei/scripts/issues"
+    "url": "https://github.com/shahzaibkhalid/shaizei/issues"
   },
-  "homepage": "https://github.com/shaizei/scripts#readme",
+  "homepage": "https://www.npmjs.com/package/@shaizei/scripts",
   "keywords": [
     "webpack",
     "config",

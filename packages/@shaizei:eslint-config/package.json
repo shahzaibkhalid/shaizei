@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaizei/eslint-config"
+    "url": "https://github.com/shahzaibkhalid/shaizei"
   },
   "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
   "license": "MIT",
@@ -19,9 +19,9 @@
     "yarn": ">=1.12"
   },
   "bugs": {
-    "url": "https://github.com/shaizei/eslint-config/issues"
+    "url": "https://github.com/shahzaibkhalid/shaizei/issues"
   },
-  "homepage": "https://github.com/shaizei/eslint-config#readme",
+  "homepage": "https://www.npmjs.com/package/@shaizei/eslint-config",
   "keywords": [
     "eslint",
     "eslintconfig",

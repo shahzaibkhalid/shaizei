@@ -5,15 +5,15 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaizei/shaizei"
+    "url": "https://github.com/shahzaibkhalid/shaizei"
   },
   "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
   "maintainers": [
     "Shahzaib Khalid"
   ],
-  "homepage": "https://github.com/shaizei/webpack-config#readme",
+  "homepage": "https://www.npmjs.com/package/@shaizei/webpack-config",
   "bugs": {
-    "url": "https://github.com/shaizei/webpack-config/issues"
+    "url": "https://github.com/shahzaibkhalid/shaizei/issues"
   },
   "license": "MIT",
   "private": false,

@@ -5,7 +5,7 @@
   "main": "tsconfig.json",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaizei/typescript-config"
+    "url": "https://github.com/shahzaibkhalid/shaizei"
   },
   "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
   "license": "MIT",
@@ -14,9 +14,9 @@
     "Shahzaib Khalid"
   ],
   "bugs": {
-    "url": "https://github.com/shaizei/typescript-config/issues"
+    "url": "https://github.com/shahzaibkhalid/shaizei/issues"
   },
-  "homepage": "https://github.com/shaizei/typescript-config#readme",
+  "homepage": "https://www.npmjs.com/package/@shaizei/typescript-config",
   "engines": {
     "node": ">=10",
     "npm": ">=6",
