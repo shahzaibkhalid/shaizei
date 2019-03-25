@@ -1,11 +1,12 @@
 <h1 align="center">shaizei</h1>
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
-<p align="center">✨ Monorepo for all the tooling, configurations and a CLI to build scalable React applications.
+<p align="center">🛠 — Toolkit for building & maintaining futuristic React apps.
 </p>
 
 # STOP! 🚧 ✋
 
-This software is still in an early development (alpha) stage and not ready for production use just yet. Please try it out, give feedback, and help fix bugs.
+This software is still in beta stages and not ready for production use just yet. Please try it out, give feedback, and help fix bugs.
 
 # About
 
@@ -172,3 +173,15 @@ We can abstract away our configurations into separate packages with sensible def
 ## License
 
 `shaizei` is released under the [MIT License](./LICENSE.md).
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://www.shahzaibkhalid.com"><img src="https://avatars3.githubusercontent.com/u/18225515?v=4" width="100px;" alt="Shahzaib Khalid"/><br /><sub><b>Shahzaib Khalid</b></sub></a><br /><a href="#question-shahzaibkhalid" title="Answering Questions">💬</a> <a href="https://github.com/shahzaibkhalid/shaizei/issues?q=author%3Ashahzaibkhalid" title="Bug reports">🐛</a> <a href="https://github.com/shahzaibkhalid/shaizei/commits?author=shahzaibkhalid" title="Code">💻</a> <a href="#design-shahzaibkhalid" title="Design">🎨</a> <a href="https://github.com/shahzaibkhalid/shaizei/commits?author=shahzaibkhalid" title="Documentation">📖</a> <a href="#example-shahzaibkhalid" title="Examples">💡</a> <a href="#fundingFinding-shahzaibkhalid" title="Funding Finding">🔍</a> <a href="#ideas-shahzaibkhalid" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-shahzaibkhalid" title="Maintenance">🚧</a> <a href="#projectManagement-shahzaibkhalid" title="Project Management">📆</a> <a href="#review-shahzaibkhalid" title="Reviewed Pull Requests">👀</a> <a href="#tool-shahzaibkhalid" title="Tools">🔧</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
