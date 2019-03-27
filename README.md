@@ -3,8 +3,12 @@
 <p align="center">🛠 — Toolkit for building & maintaining futuristic React apps.
 </p>
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+<p align="center">
+  <a href="#contributors"><img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" alt="all-contributors"></a>
+  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcomed"></a>
+  <a href="https://github.com/shahzaibkhalid/shaizei/blob/master/LICENSE.md"><img src="https://img.shields.io/npm/l/@shaizei/cli.svg?style=flat-square" alt="MIT License"></a>
+  <a href="https://www.npmjs.com/package/@shaizei/cli"><img src="https://img.shields.io/npm/v/@shaizei/cli.svg" alt="Version"></a>
+</p>
 
 # STOP! 🚧 ✋
 
@@ -16,7 +20,7 @@ This repo contains several packages to develop and build scalable React.js apps.
 
 * [@shaizei/babel-preset](./packages/@shaizei:babel-preset/README.md) - This package contains shareable babel.js configuration used by the applications created with @shaizei/cli.
 
-* [@shaizei/cli](./packages/@shaizei:cli/README.md) - An unapponionated CLI to build React.js apps without tears.
+* [@shaizei/cli](./packages/@shaizei:cli/README.md) - A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.
 
 * [@shaizei/eslint-config](./packages/@shaizei:eslint-config/README.md) - This repository contains shareable ESLint configuration used by the applications created with @shaizei/cli.
 
