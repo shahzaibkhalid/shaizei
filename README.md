@@ -18,19 +18,19 @@ This software is still in beta stages and not ready for production use just yet.
 
 This repo contains several packages to develop and build scalable React.js apps.
 
-* [@shaizei/babel-preset](./packages/@shaizei:babel-preset/README.md) - This package contains shareable babel.js configuration used by the applications created with @shaizei/cli.
+* [@shaizei/babel-preset](./packages/babel-preset/README.md) - This package contains shareable babel.js configuration used by the applications created with @shaizei/cli.
 
-* [@shaizei/cli](./packages/@shaizei:cli/README.md) - A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.
+* [@shaizei/cli](./packages/cli/README.md) - A next-generation CLI to quickly scaffold pre-configured yet on-demand configurable React applications.
 
-* [@shaizei/eslint-config](./packages/@shaizei:eslint-config/README.md) - This repository contains shareable ESLint configuration used by the applications created with @shaizei/cli.
+* [@shaizei/eslint-config](./packages/eslint-config/README.md) - This repository contains shareable ESLint configuration used by the applications created with @shaizei/cli.
 
-* [@shaizei/prettier-config](./packages/@shaizei:prettier-config/README.md) - This repository contains shareable Prettier configuration used by the applications created with @shaizei/cli.
+* [@shaizei/prettier-config](./packages/prettier-config/README.md) - This repository contains shareable Prettier configuration used by the applications created with @shaizei/cli.
 
-* [@shaizei/scripts](./packages/@shaizei:scripts/README.md) - This package contains automation task used by the applications created with @shaizei/cli.
+* [@shaizei/scripts](./packages/scripts/README.md) - This package contains automation task used by the applications created with @shaizei/cli.
 
-* [@shaizei/typescript-config](./packages/@shaizei:typescript-config/README.md) - This package contains shareable TypeScript compiler configuration used by the applications created with @shaizei/cli.
+* [@shaizei/typescript-config](./packages/typescript-config/README.md) - This package contains shareable TypeScript compiler configuration used by the applications created with @shaizei/cli.
 
-* [@shaizei/webpack-config](./packages/@shaizei:webpack-config/README.md) - This package contains shareable webpack configuration used by the applications created with @shaizei/cli.
+* [@shaizei/webpack-config](./packages/webpack-config/README.md) - This package contains shareable webpack configuration used by the applications created with @shaizei/cli.
 
 # Getting Started
 
@@ -137,11 +137,11 @@ Change this option to change the document title.
 
 You can also configure other tools in development and production builds pipelines. Click on each of the below mentioned tools to learn more about configuration options available.
 
-* [webpack](./packages/@shaizei:webpack-config/README.md)
-* [babel](./packages/@shaizei:babel-preset/README.md)
-* [ESLint](./packages/@shaizei:eslint-config/README.md)
-* [Prettier](./packages/@shaizei:prettier-config/README.md)
-* [TypeScript](./packages/@shaizei:typescript-config/README.md)
+* [webpack](./packages/webpack-config/README.md)
+* [babel](./packages/babel-preset/README.md)
+* [ESLint](./packages/eslint-config/README.md)
+* [Prettier](./packages/prettier-config/README.md)
+* [TypeScript](./packages/typescript-config/README.md)
 
 ## Opinions
 
