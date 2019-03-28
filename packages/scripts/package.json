@@ -31,12 +31,12 @@
     "@shaizei/babel-preset": "^0.1.0-beta.2",
     "@shaizei/eslint-config": "^0.1.0-beta.2",
     "cross-spawn": "^6.0.5",
-    "eslint": "^5.13.0",
+    "eslint": "^5.15.3",
     "serve": "^10.1.2",
     "tree-kill": "^1.2.1",
-    "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
   "publishConfig": {
     "access": "public"
