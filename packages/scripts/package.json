@@ -31,7 +31,6 @@
     "@shaizei/babel-preset": "^0.1.0-beta.2",
     "@shaizei/eslint-config": "^0.1.0-beta.2",
     "cross-spawn": "^6.0.5",
-    "dotenv": "^6.2.0",
     "eslint": "^5.13.0",
     "serve": "^10.1.2",
     "tree-kill": "^1.2.1",
