@@ -28,10 +28,10 @@
     "tsconfig"
   ],
   "dependencies": {
-    "@types/react": "^16.8.2",
-    "@types/react-dom": "^16.8.0",
-    "@types/react-redux": "^7.0.1",
-    "typescript": "^3.3.3"
+    "@types/react": "^16.8.10",
+    "@types/react-dom": "^16.8.3",
+    "@types/react-redux": "^7.0.5",
+    "typescript": "^3.3.4000"
   },
   "publishConfig": {
     "access": "public"
