@@ -49,7 +49,7 @@ const shaizeiBabelPreset = (context, options = {}) => {
         useBuiltIns: false,
         development: env === 'development' ? true : false,
         throwIfNamespace: true,
-      },  
+      },
     ],
     [
       require.resolve('@babel/preset-env'),
@@ -63,7 +63,8 @@ const shaizeiBabelPreset = (context, options = {}) => {
         forceAllTransforms: false,
         configPath: process.cwd(),
         ignoreBrowserslistConfig: true,
-        shippedProposals: true,  
+        shippedProposals: true,
+        corejs: 2
       }
     ],
   ];
