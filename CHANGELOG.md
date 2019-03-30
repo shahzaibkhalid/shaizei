@@ -1,3 +1,13 @@
+## v0.1.0-beta.4 (2019-03-31)
+
+#### :bug: Bug Fix
+* `webpack-config`
+  * [#18](https://github.com/shahzaibkhalid/shaizei/pull/18) fix(webpack-config): Fix clean-webpack-plugin API mismatch bug. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#19](https://github.com/shahzaibkhalid/shaizei/pull/19) fix(babel-preset): Fixing corejs versioning issue. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## v0.1.0-beta.3 (2019-03-30)
 
 #### :nail_care: Enhancement
