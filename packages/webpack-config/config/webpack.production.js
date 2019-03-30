@@ -34,7 +34,7 @@ const webpackProdConfig = {
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
     }),
-    new CleanWebpackPlugin(['build'], {
+    new CleanWebpackPlugin({
       root: path.resolve(process.cwd()),
       allowExternal: false,
       dry: false,
