@@ -1,3 +1,27 @@
+## v0.1.0-beta.3 (2019-03-30)
+
+#### :nail_care: Enhancement
+* `typescript-config`
+  * [#17](https://github.com/shahzaibkhalid/shaizei/pull/17) chore(typescript-config): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `scripts`
+  * [#16](https://github.com/shahzaibkhalid/shaizei/pull/16) chore(scripts): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `eslint-config`
+  * [#14](https://github.com/shahzaibkhalid/shaizei/pull/14) chore(eslint-config): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `babel-preset`
+  * [#13](https://github.com/shahzaibkhalid/shaizei/pull/13) chore(babel-preset): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `webpack-config`
+  * [#12](https://github.com/shahzaibkhalid/shaizei/pull/12) chore(webpack-config): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :house: Internal
+* `scripts`
+  * [#15](https://github.com/shahzaibkhalid/shaizei/pull/15) refactor(scripts): Remove `dotenv` package. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `cli`
+  * [#11](https://github.com/shahzaibkhalid/shaizei/pull/11) Remove `yarn.lock` file for `cli` package. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+
 ## v0.1.0-beta.2 (2019-03-24)
 
 #### :bug: Bug Fix
