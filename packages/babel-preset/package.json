@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/babel-preset",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-beta.3",
   "description": "This package contains shareable babel.js configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {
