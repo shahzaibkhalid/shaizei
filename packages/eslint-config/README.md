@@ -26,13 +26,17 @@ Using npm:
 For JavaScript projects:
 
 ```javascript
-module.exports = require('@shaizei/eslint-config').javascriptReact;
+module.exports = {
+  extends: '@shaizei/eslint-config/javascriptReact',
+};
 ```
 
 For TypeScript projects:
 
 ```javascript
-module.exports = require('@shaizei/eslint-config').typescriptReact;
+module.exports = {
+  extends: '@shaizei/eslint-config/typescriptReact',
+};
 ```
 
 * In order to have a `.eslintignore` file as well, just run the following command from terminal:
@@ -45,12 +49,22 @@ module.exports = require('@shaizei/eslint-config').typescriptReact;
 
 If you want to override the default configuration, then add the following code in `.eslintrc.js` file:
 
+For JavaScript projects:
+
 ```javascript
-  const ESLintConfig = require('@shaizei/eslint-config');
-  module.exports = {
-    ...ESLintConfig,
-    // your config options goes here, e.g. plugins: [...]
-  }
+module.exports = {
+  extends: '@shaizei/eslint-config/javascriptReact',
+  // your config options goes here, e.g. plugins: [...]
+};
+```
+
+For TypeScript projects:
+
+```javascript
+module.exports = {
+  extends: '@shaizei/eslint-config/typescriptReact',
+  // your config options goes here, e.g. plugins: [...]
+};
 ```
 
 ## VSCode ESLint Extension Setup
