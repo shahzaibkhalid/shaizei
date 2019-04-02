@@ -18,15 +18,6 @@ const shaizeiBabelPreset = (context, options = {}) => {
   const plugins = [
     require('react-hot-loader/babel'),
     [
-      require.resolve('babel-plugin-emotion'),
-      {
-        sourceMap: true,
-        autoLabel: env === 'development',
-        labelFormat: '[local]',
-        cssPropOptimization: true,
-      }
-    ],
-    [
       require.resolve('@babel/plugin-proposal-class-properties'),
       {
         loose: false,
@@ -74,7 +65,17 @@ const shaizeiBabelPreset = (context, options = {}) => {
   }
   // keep emotion preset at the end otherwise it won't work :|
   if (options.emotion && options.emotion === true) {
-    presets.push(require.resolve('@emotion/babel-preset-css-prop'));
+    presets.push(
+      [
+        require.resolve('@emotion/babel-preset-css-prop'),
+        {
+          sourceMap: true,
+          autoLabel: env === 'development',
+          labelFormat: '[local]',
+          cssPropOptimization: true,
+        }
+      ]
+    );
   }
 
   if (env === 'production') {
@@ -94,7 +95,7 @@ const shaizeiBabelPreset = (context, options = {}) => {
           mode: 'remove',
           removeImport: true,
           ignoreFileNames: ['node_modules'],
-        },    
+        },
       ]
     )
   }
