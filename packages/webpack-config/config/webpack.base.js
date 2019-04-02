@@ -155,7 +155,10 @@ const baseConfig = {
       '.ttf',
       '.css',
       '.scss',
-      '.sass'
+      '.sass',
+      '.png',
+      '.jpg',
+      '.jpeg'
     ],
     alias: {
       src: path.resolve(process.cwd(), 'src')
