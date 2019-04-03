@@ -5,6 +5,7 @@ const eslintConfigForTS = {
   },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
+    'react/prop-types': 0
   },
   plugins: [
     '@typescript-eslint',
