@@ -2,8 +2,8 @@
 
 #### :bug: Bug Fix
 * `webpack-config`
-  * [#18](https://github.com/shahzaibkhalid/shaizei/pull/18) fix(webpack-config): Fix clean-webpack-plugin API mismatch bug. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
-  * [#19](https://github.com/shahzaibkhalid/shaizei/pull/19) fix(babel-preset): Fixing corejs versioning issue. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#18](https://github.com/shahzaibkhalid/shaizei/pull/18) Fix clean-webpack-plugin API mismatch bug. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#19](https://github.com/shahzaibkhalid/shaizei/pull/19) Fixing corejs versioning issue. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 
 #### Committers: 1
 - Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
@@ -12,19 +12,19 @@
 
 #### :nail_care: Enhancement
 * `typescript-config`
-  * [#17](https://github.com/shahzaibkhalid/shaizei/pull/17) chore(typescript-config): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#17](https://github.com/shahzaibkhalid/shaizei/pull/17) Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 * `scripts`
-  * [#16](https://github.com/shahzaibkhalid/shaizei/pull/16) chore(scripts): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#16](https://github.com/shahzaibkhalid/shaizei/pull/16) Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 * `eslint-config`
-  * [#14](https://github.com/shahzaibkhalid/shaizei/pull/14) chore(eslint-config): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#14](https://github.com/shahzaibkhalid/shaizei/pull/14) Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 * `babel-preset`
-  * [#13](https://github.com/shahzaibkhalid/shaizei/pull/13) chore(babel-preset): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#13](https://github.com/shahzaibkhalid/shaizei/pull/13) Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 * `webpack-config`
-  * [#12](https://github.com/shahzaibkhalid/shaizei/pull/12) chore(webpack-config): Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#12](https://github.com/shahzaibkhalid/shaizei/pull/12) Update dependencies. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 
 #### :house: Internal
 * `scripts`
-  * [#15](https://github.com/shahzaibkhalid/shaizei/pull/15) refactor(scripts): Remove `dotenv` package. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#15](https://github.com/shahzaibkhalid/shaizei/pull/15) Remove `dotenv` package. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 * `cli`
   * [#11](https://github.com/shahzaibkhalid/shaizei/pull/11) Remove `yarn.lock` file for `cli` package. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 
@@ -36,14 +36,12 @@
 
 #### :bug: Bug Fix
 * `@shaizei:cli`
-  * [#2](https://github.com/shahzaibkhalid/shaizei/pull/2) Fix CLI version bug. ([@shahzaibkhalid](https://github.com/shahza
-ibkhalid))
+  * [#2](https://github.com/shahzaibkhalid/shaizei/pull/2) Fix CLI version bug. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 
 #### :nail_care: Enhancement
 * `@shaizei:babel-preset`, `@shaizei:cli`, `@shaizei:eslint-config`, `@shaizei:prettier-config`, `@shaizei:scripts`, `@shaiz
 ei:typescript-config`, `@shaizei:webpack-config`
-  * [#1](https://github.com/shahzaibkhalid/shaizei/pull/1) Update to package.json ([@shahzaibkhalid](https://github.com/shah
-zaibkhalid))
+  * [#1](https://github.com/shahzaibkhalid/shaizei/pull/1) Update to package.json ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
 
 #### :house: Internal
 * `eslint-config`
