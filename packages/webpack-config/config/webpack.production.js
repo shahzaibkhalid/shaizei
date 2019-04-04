@@ -9,14 +9,15 @@ const loadJSONFIle = require('load-json-file');
 
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
-const shouldAddSourceMaps = shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true;
+const shouldAddJSSourceMaps = shaizeiConfig.hasOwnProperty('addJSSourceMaps') ? shaizeiConfig.addJSSourceMaps : true;
+const shouldAddCSSSourceMaps = shaizeiConfig.hasOwnProperty('addCSSSourceMaps') ? shaizeiConfig.addCSSSourceMaps : true;
 const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
 const prodSourceMap = shaizeiConfig.hasOwnProperty('webpackProdSourceMap') ? shaizeiConfig.webpackProdSourceMap : 'source-map';
 
 const webpackProdConfig = {
   mode: 'production',
   bail: true,
-  devtool: shouldAddSourceMaps ? prodSourceMap : false,
+  devtool: shouldAddJSSourceMaps ? prodSourceMap : false,
   entry: path.resolve(process.cwd(), 'src', `index.${isTypeScript ? 'tsx' : 'jsx'}`),
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
@@ -70,13 +71,13 @@ const webpackProdConfig = {
         },
         cache: true,
         parallel: true,
-        sourceMap: shouldAddSourceMaps
+        sourceMap: shouldAddJSSourceMaps
       }),
       new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,
         cssProcessor: require('cssnano'),
         cssProcessorOptions: {
-          map: shouldAddSourceMaps ? {
+          map: shouldAddCSSSourceMaps ? {
             inline: false,
             annotation: true
           } : false,

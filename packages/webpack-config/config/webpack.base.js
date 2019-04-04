@@ -11,6 +11,7 @@ const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.j
 const isProduction = process.env.NODE_ENV === 'production';
 const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
 const shouldUseCSSModules = shaizeiConfig.hasOwnProperty('cssModules') ? shaizeiConfig.cssModules : false;
+const shouldAddCSSSourceMaps = shaizeiConfig.hasOwnProperty('addCSSSourceMaps') ? shaizeiConfig.addCSSSourceMaps : true;
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
@@ -34,8 +35,8 @@ const styleLoader = {
     attrs: {},
     insertAt: 'top',
     singleton: true,
-    sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
-    convertToAbsoluteUrls: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
+    sourceMap: shouldAddCSSSourceMaps,
+    convertToAbsoluteUrls: shouldAddCSSSourceMaps,
   },
 };
 
@@ -97,7 +98,7 @@ const baseConfig = {
               import: true,
               modules: shouldUseCSSModules,
               localIdentName: '[name]-[hash:base64:5]',
-              sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
+              sourceMap: shouldAddCSSSourceMaps,
               camelCase: shouldUseCSSModules,
               importLoaders: false,
               exportOnlyLocals: false,
@@ -115,7 +116,7 @@ const baseConfig = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: shaizeiConfig.hasOwnProperty('addSourceMaps') ? shaizeiConfig.addSourceMaps : true,
+              sourceMap: shouldAddCSSSourceMaps,
             }
           }
         ],
