@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/webpack-config",
-  "version": "0.1.0-beta.4",
+  "version": "0.1.0-beta.5",
   "description": "This package contains shareable webpack configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {
@@ -33,6 +33,7 @@
     "@babel/runtime-corejs2": "^7.4.2",
     "babel-loader": "^8.0.5",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
+    "ci-info": "^2.0.0",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "deasync": "^0.1.14",
@@ -61,8 +62,7 @@
     "webpack-dev-server": "^3.2.1",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.2.1",
-    "webpackbar": "^3.1.5",
-    "ci-info": "^2.0.0"
+    "webpackbar": "^3.1.5"
   },
   "publishConfig": {
     "access": "public"
