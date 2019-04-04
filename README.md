@@ -86,7 +86,7 @@ In order to configure certain behavior of development workflow, you can play wit
   {
     "typescript": false,
     "showErrorOverly": true,
-    "emitLintingErrors": true,
+    "emitLintingErrors": false,
     "host": "localhost",
     "defaultPort": 3000,
     "https": false,
@@ -107,7 +107,7 @@ Set this flag to `true` if you want to support `.ts` or `.tsx` files.
 You'll see webpack error overlay for errors of various kinds to ease the development workflow. Turn this flag to `false` to get out of this default behavior.
 
 - **emitLintingErrors** (boolean: `false`)  
-By default, no linting error will break the development build, but if you want the `webpack-dev-server` to fail the build in case of any linting error, turn this flag to `true`.
+By default, linting errors won't break the incremental development builds, but if you want the `webpack-dev-server` to fail the build in case of any linting error, (in order to get more quick linting feedback) turn this flag to `true`.
 
 - **host** (string: `localhost`)  
 Modify this flag to change the default `localhost`.
