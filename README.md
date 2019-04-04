@@ -98,39 +98,39 @@ In order to configure certain behavior of development workflow, you can play wit
   }
 ```
 
-Please find the details of each property as follows:
+Please find the details of each property along with default value as follows:
 
-- **typescript** (default: false)  
+- **typescript** (boolean: `false`)  
 Set this flag to `true` if you want to support `.ts` or `.tsx` files.
 
-- **showErrorOverly** (default: true)  
+- **showErrorOverly** (boolean: `true`)  
 You'll see webpack error overlay for errors of various kinds to ease the development workflow. Turn this flag to `false` to get out of this default behavior.
 
-- **emitLintingErrors** (default: false)  
+- **emitLintingErrors** (boolean: `false`)  
 By default, no linting error will break the development build, but if you want the `webpack-dev-server` to fail the build in case of any linting error, turn this flag to `true`.
 
-- **host** (default: localhost)  
+- **host** (string: `localhost`)  
 Modify this flag to change the default `localhost`.
 
-- **defaultPort** (default: 3000)  
+- **defaultPort** (number: `3000`)  
 You can modify the default port by modifying this option. Note that if the mentioned port is already busy, dev server will be started on a different port.
 
-- **https** (default: false)  
+- **https** (boolean: `false`)  
 You can change this option to `true` in order to run the development server with HTTPS.
 
-- **addSourceMaps** (default: true)  
+- **addSourceMaps** (boolean: `true`)  
 By default, source maps for production bundle, (for CSS and JavaScript) will be generated. If you want to opt-out of this behavior, turn this flag to `false`.
 
-- **cssModules** (default: false)  
+- **cssModules** (boolean: `false`)  
 By default, CSS Modules are not enabled, but you can enable by turning this flag to `true`.
 
-- **webpackDevSourceMap** (default: 'cheap-module-source-map')
+- **webpackDevSourceMap** (string: `cheap-module-source-map`)
 By default, `cheap-module-source-map` will be used as webpack-dev-server `devtool`. But you can add any other option, valid for webpack `devtool` option.
 
-- **webpackProdSourceMap** (default: 'source-map')
+- **webpackProdSourceMap** (string: `source-map`)
 By default, `source-map` will be used as a `devtool` for production bundle source maps. But you can add any other option, valid for webpack `devtool` option.
 
-- **title** (default: 'React App | Shaizei')  
+- **title** (string: `React App | Shaizei`)  
 Change this option to change the document title.
 
 ### Configuring other tools
