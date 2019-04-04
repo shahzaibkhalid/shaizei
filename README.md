@@ -90,7 +90,8 @@ In order to configure certain behavior of development workflow, you can play wit
     "host": "localhost",
     "defaultPort": 3000,
     "https": false,
-    "addSourceMaps": true,
+    "addCSSSourceMaps": true,
+    "addJSSourceMaps": true,
     "cssModules": false,
     "webpackDevSourceMap": "cheap-module-source-map",
     "webpackProdSourceMap": "source-map",
@@ -118,8 +119,11 @@ You can modify the default port by modifying this option. Note that if the menti
 - **https** (boolean: `false`)  
 You can change this option to `true` in order to run the development server with HTTPS.
 
-- **addSourceMaps** (boolean: `true`)  
-By default, source maps for production bundle, (for CSS and JavaScript) will be generated. If you want to opt-out of this behavior, turn this flag to `false`.
+- **addCSSSourceMaps** (boolean: `true`)  
+By default, source maps will be generated for CSS files within production build, If you want to opt-out of this behavior, turn this flag to `false`.
+
+- **addJSSourceMaps** (boolean: `true`)  
+By default, source maps will be generated for JavaScript files within production build, If you want to opt-out of this behavior, turn this flag to `false`.
 
 - **cssModules** (boolean: `false`)  
 By default, CSS Modules are not enabled, but you can enable by turning this flag to `true`.
