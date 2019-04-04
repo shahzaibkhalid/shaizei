@@ -90,11 +90,11 @@ In order to configure certain behavior of development workflow, you can play wit
     "host": "localhost",
     "defaultPort": 3000,
     "https": false,
-    "addSourceMaps": false,
-    "cssModules": true,
+    "addSourceMaps": true,
+    "cssModules": false,
     "webpackDevSourceMap": "cheap-module-source-map",
     "webpackProdSourceMap": "source-map",
-    "title": "Shaizei | JavaScript Starter"
+    "title": "React App | Shaizei"
   }
 ```
 
