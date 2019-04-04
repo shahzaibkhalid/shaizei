@@ -1,3 +1,31 @@
+## v0.1.0-beta.5 (2019-04-05)
+
+#### :rocket: New Feature
+* `webpack-config`
+  * [#24](https://github.com/shahzaibkhalid/shaizei/pull/24) Add separate CSS and JS source-map options. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `eslint-config`
+  * [#23](https://github.com/shahzaibkhalid/shaizei/pull/23) Turn off `prop-types` rule. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :bug: Bug Fix
+* `webpack-config`
+  * [#26](https://github.com/shahzaibkhalid/shaizei/pull/26) Handle certain tooling for CI/CD. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#25](https://github.com/shahzaibkhalid/shaizei/pull/25) Fix logging of port-fallback in `shaizei build`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :nail_care: Enhancement
+* `webpack-config`
+  * [#22](https://github.com/shahzaibkhalid/shaizei/pull/22) Add new extensions for webpack absolute imports. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :memo: Documentation
+* `eslint-config`
+  * [#20](https://github.com/shahzaibkhalid/shaizei/pull/20) Changed the file setup of `.eslintrc.js`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :house: Internal
+* `babel-preset`
+  * [#21](https://github.com/shahzaibkhalid/shaizei/pull/21) Remove `babel-plugin-emotion`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## v0.1.0-beta.4 (2019-03-31)
 
 #### :bug: Bug Fix
