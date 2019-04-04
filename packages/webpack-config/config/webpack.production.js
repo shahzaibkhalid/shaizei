@@ -6,6 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const loadJSONFIle = require('load-json-file');
+const { isCI } = require('ci-info');
 
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
@@ -13,6 +14,19 @@ const shouldAddJSSourceMaps = shaizeiConfig.hasOwnProperty('addJSSourceMaps') ? 
 const shouldAddCSSSourceMaps = shaizeiConfig.hasOwnProperty('addCSSSourceMaps') ? shaizeiConfig.addCSSSourceMaps : true;
 const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
 const prodSourceMap = shaizeiConfig.hasOwnProperty('webpackProdSourceMap') ? shaizeiConfig.webpackProdSourceMap : 'source-map';
+const conditionalPlugins = [];
+
+if (!isCI) {
+  conditionalPlugins.push(
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      generateStatsFile: true,
+      reportFilename: 'stats/report.html',
+      statsFilename: 'stats/stats.json',
+      openAnalyzer: false,
+    })
+  );
+}
 
 const webpackProdConfig = {
   mode: 'production',
@@ -25,13 +39,7 @@ const webpackProdConfig = {
     publicPath: '/'
   },
   plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      generateStatsFile: true,
-      reportFilename: 'stats/report.html',
-      statsFilename: 'stats/stats.json',
-      openAnalyzer: false,
-    }),
+    ...conditionalPlugins,
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
     }),
@@ -40,7 +48,7 @@ const webpackProdConfig = {
       allowExternal: false,
       dry: false,
       watch: false,
-      verbose: true,
+      verbose: false,
     }),
     new MiniCssExtractPlugin({
       filename: 'static/css/[name].[contenthash:8].css',

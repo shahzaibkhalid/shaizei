@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const WebpackBar = require('webpackbar');
+const { isCI } = require('ci-info');
 
 const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
@@ -12,6 +13,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
 const shouldUseCSSModules = shaizeiConfig.hasOwnProperty('cssModules') ? shaizeiConfig.cssModules : false;
 const shouldAddCSSSourceMaps = shaizeiConfig.hasOwnProperty('addCSSSourceMaps') ? shaizeiConfig.addCSSSourceMaps : true;
+const conditionalPlugins = [];
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
@@ -52,6 +54,10 @@ if (isTypeScript) {
   });
 }
 
+if (!isCI) {
+  conditionalPlugins.push(new WebpackBar());
+}
+
 const baseConfig = {
   context: path.resolve(process.cwd(), 'src'),
   entry: {
@@ -62,10 +68,10 @@ const baseConfig = {
     filename: 'app.bundle.js',
   },
   plugins: [
+    ...conditionalPlugins,
     new CaseSensitivePathsPlugin({
       debug: false,
     }),
-    new WebpackBar(),
     new HtmlWebpackPlugin({
       title: shaizeiConfig.hasOwnProperty('title') ? shaizeiConfig.title : 'React App | Shaizei',
       filename: 'index.html',
