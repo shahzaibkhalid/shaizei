@@ -27,6 +27,7 @@
     "tsc",
     "tsconfig"
   ],
+  "types": "./lib/react-app.d.ts",
   "dependencies": {
     "@types/react": "^16.8.10",
     "@types/react-dom": "^16.8.3",
