@@ -17,3 +17,4 @@ webpack.config.js
 .prettierrc.js
 babel.config.js
 .babelrc.js
+*.d.ts
