@@ -1,3 +1,22 @@
+## v0.1.0-beta.6 (2019-04-10)
+
+#### :rocket: New Feature
+* `babel-preset`
+  * [#30](https://github.com/shahzaibkhalid/shaizei/pull/30) Add direct support of `typescript` and `emotion`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `eslint-config`
+  * [#28](https://github.com/shahzaibkhalid/shaizei/pull/28) Ignore linting for `*.d.ts` files. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `typescript-config`
+  * [#27](https://github.com/shahzaibkhalid/shaizei/pull/27) Add support for media files (images etc.) ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :nail_care: Enhancement
+* `typescript-config`
+  * [#31](https://github.com/shahzaibkhalid/shaizei/pull/31) Remove types from base `tsconfig.json`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `webpack-config`
+  * [#29](https://github.com/shahzaibkhalid/shaizei/pull/29) Remove `ts-loader` from TS build pipeline. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## v0.1.0-beta.5 (2019-04-05)
 
 #### :rocket: New Feature
