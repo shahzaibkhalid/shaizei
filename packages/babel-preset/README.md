@@ -31,36 +31,6 @@ For JavaScript projects:
   }
 ```
 
-For TypeScript projects:
-
-If you're using this preset in a TypeScript project and want Babel to transpile your TypeScript code, then pass the `typescript` option as follows:
-
-```javascript
-  {
-    "presets": [
-      "@shaizei/babel-preset",
-      {
-        typescript: true
-      }
-    ]
-  }
-```
-
-For Emotion projects:
-
-If you're using [Emotion](https://emotion.sh) and want to add support of Emotion's CSS prop, the pass the `emotion` option as follows:
-
-```javascript
-  {
-    "presets": [
-      "@shaizei/babel-preset",
-      {
-        emotion: true
-      }
-    ]
-  }
-```
-
 ## Override Default Config
 
 If you want to override the default configuration, then extend `.babelrc` normally.
