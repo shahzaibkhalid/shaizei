@@ -95,6 +95,7 @@ In order to configure certain behavior of development workflow, you can play wit
     "cssModules": false,
     "webpackDevSourceMap": "cheap-module-source-map",
     "webpackProdSourceMap": "source-map",
+    "emotion": false,
     "title": "React App | Shaizei"
   }
 ```
@@ -133,6 +134,10 @@ By default, `cheap-module-source-map` will be used as webpack-dev-server `devtoo
 
 - **webpackProdSourceMap** (string: `source-map`)
 By default, `source-map` will be used as a `devtool` for production bundle source maps. But you can add any other option, valid for webpack `devtool` option.
+
+- **emotion** (boolean: `false`)  
+In order to add support for [emotion](https://emotion.sh) (a CSS-In-JS library) turn this flag to `true`.
+Note that if you're using TypeScript, you should also add `@emotion/core` inside the `types` array in `tsconfig.json`.
 
 - **title** (string: `React App | Shaizei`)  
 Change this option to change the document title.
