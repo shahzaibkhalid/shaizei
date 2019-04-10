@@ -48,12 +48,6 @@ if (isProduction) {
   });
 }
 
-if (isTypeScript) {
-  primaryJSTSxLoaders.push({
-    loader: require.resolve('ts-loader')
-  });
-}
-
 if (!isCI) {
   conditionalPlugins.push(new WebpackBar());
 }
