@@ -39,11 +39,6 @@
     "lib": [
       "esnext",
       "dom"
-    ],
-    "types": [
-      "react",
-      "react-dom",
-      "react-redux"
     ]
   },
   "typeAcquisition": {
