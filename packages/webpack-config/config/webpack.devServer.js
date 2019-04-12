@@ -24,7 +24,6 @@ if (defaultPort !== freePort && process.env.NODE_ENV === 'development') {
 
 const serverConfig = {
   open: true,
-  watchContentBase: true,
   clientLogLevel: 'none',
   hot: true,
   publicPath: '/',
