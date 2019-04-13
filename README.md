@@ -154,7 +154,7 @@ You can also configure other tools in development and production builds pipeline
 
 ### Hot Module Replacement  
 
-Hot Module Replacement is already setup using `react-hot-loader`. However, if you want to turn back to normal behavior of full-blown page refresh whenever you make any change. You've to make some changes in the codebase:
+Hot Module Replacement is already setup using `react-hot-loader`. However, if you want to turn back to normal behavior of full-blown page refresh whenever you make any change. You've to make a small change in the codebase:
 
 `src/App.tsx` or `src/App.jsx`
 
