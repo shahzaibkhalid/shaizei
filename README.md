@@ -95,6 +95,7 @@ In order to configure certain behavior of development workflow, you can play wit
     "cssModules": false,
     "webpackDevSourceMap": "cheap-module-source-map",
     "webpackProdSourceMap": "source-map",
+    "typeCheck": false,
     "emotion": false,
     "title": "React App | Shaizei"
   }
@@ -134,6 +135,19 @@ By default, `cheap-module-source-map` will be used as webpack-dev-server `devtoo
 
 - **webpackProdSourceMap** (string: `source-map`)
 By default, `source-map` will be used as a `devtool` for production bundle source maps. But you can add any other option, valid for webpack `devtool` option.
+
+- **typeCheck** (boolean: `false`)  
+As `shaizei` uses Babel to convert TypeScript to JavaScript, so Babel just strips away types without any type-checking. This usually results in faster incremental builds but takes away the important aspect of TypeScript, type-checking. And the only way left is that you can check the soundness of types via your IDE intellisense features. This is not helpful always. There are two ways to type-check your TypeScript code in `shaizei`.
+  * You can turn on `typeCheck` flag in `shaizeirc.json` by turning its value to `true`. This will use `fork-ts-checker-webpack-plugin` for type-checking in every compilation. Note that this is only available when `typescript` flag value is `true` and won't do anything for JavaScript-React projects. This might leads to slower incremental builds.
+
+  * Second option is to run the type-checking script that's exposed by `shaizei`. You can run it as follows:
+
+    ```shell
+    shaizei type-check
+    ```
+
+    This will type-check your TypeScript code and will report the errors on terminal output (if any).
+    Note that `typescript` options must be `true` in order to run `type-check` script.
 
 - **emotion** (boolean: `false`)  
 In order to add support for [emotion](https://emotion.sh) (a CSS-In-JS library) turn this flag to `true`.
