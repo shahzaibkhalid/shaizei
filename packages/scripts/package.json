@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/scripts",
-  "version": "0.1.0-beta.6",
+  "version": "0.1.0-beta.7",
   "description": "This package contains automation task used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {
@@ -28,8 +28,8 @@
     "yarn": ">=1.12"
   },
   "dependencies": {
-    "@shaizei/babel-preset": "^0.1.0-beta.6",
-    "@shaizei/eslint-config": "^0.1.0-beta.6",
+    "@shaizei/babel-preset": "^0.1.0-beta.7",
+    "@shaizei/eslint-config": "^0.1.0-beta.7",
     "cross-spawn": "^6.0.5",
     "eslint": "^5.15.3",
     "serve": "^10.1.2",
