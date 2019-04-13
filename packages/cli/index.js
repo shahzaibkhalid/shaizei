@@ -4,7 +4,8 @@ require('./utils/validateNodeVersion')();
 const {
   entryValidation,
   validateBuildDirExists,
-  validateStatsJSONExists
+  validateStatsJSONExists,
+  validateIfTypeScriptApp
 } = require('./utils/validateOpinions');
 
 const program = require('commander');
@@ -168,6 +169,20 @@ program
     '\n'
   );
   require('@shaizei/scripts').prettierFix();
+});
+
+program
+.command('type-check')
+.alias('tc')
+.description(`Type-Check your TypeScript code.`)
+.action(() => {
+  validateIfTypeScriptApp();
+  console.log(
+    '\n' +
+    chalk.yellow('Running Type-Check on TypeScript files...') +
+    '\n'
+  );
+  require('@shaizei/scripts').typeCheck();
 });
 
 program.on('command:*', function () {

@@ -17,6 +17,16 @@ const pathToFaviconICO = path.resolve(pathToSrcDir, 'assets', 'favicon.ico');
 const pathToBuild = path.resolve(process.cwd(), 'build');
 const pathToStatsJSON = path.resolve(pathToBuild, 'stats', 'stats.json');
 
+const shaizeiConfig = loadJSONFIle.sync(pathToShaizeiConfig);
+const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
+
+validateIfTypeScriptApp = () => {
+  if (!isTypeScript) {
+    console.error(chalk.red(`Found 'typescript:false' in 'shaizeirc.json'.\nYou can only type-check in a TypeScript project.`));
+    process.exit(1);
+  }
+}
+
 const validator = (path, errorList) => {
   if (!fs.existsSync(path)) {
     errorList.forEach((err) => {
@@ -42,9 +52,6 @@ const entryValidation = () => {
     `Apps scaffolded with '@shaizei/cli' has an opinion about 'src' directory:\n`,
     `Please note that their must be a 'src' directory at the root of the project directory containing application-specific code.`
   ]);
-
-  const shaizeiConfig = loadJSONFIle.sync(pathToShaizeiConfig);
-  const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
 
   if (isTypeScript) {
     validator(pathToIndexTSX, [
@@ -87,5 +94,6 @@ const validateStatsJSONExists = () => {
 module.exports = {
   entryValidation,
   validateBuildDirExists,
-  validateStatsJSONExists
+  validateStatsJSONExists,
+  validateIfTypeScriptApp
 };
