@@ -7,6 +7,7 @@ const eslintPrettierIntegration = require('./scripts/eslint-prettier-integration
 const prettier = require('./scripts/prettier');
 const lintFix = require('./scripts/lint-fix');
 const prettierFix = require('./scripts/prettier-fix');
+const typeCheck = require('./scripts/type-check');
 
 module.exports = {
   lint,
@@ -17,5 +18,6 @@ module.exports = {
   eslintPrettierIntegration,
   prettier,
   lintFix,
-  prettierFix
+  prettierFix,
+  typeCheck,
 };
