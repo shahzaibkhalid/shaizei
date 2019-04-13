@@ -152,6 +152,19 @@ You can also configure other tools in development and production builds pipeline
 * [Prettier](./packages/prettier-config/README.md)
 * [TypeScript](./packages/typescript-config/README.md)
 
+### Hot Module Replacement  
+
+Hot Module Replacement is already setup using `react-hot-loader`. However, if you want to turn back to normal behavior of full-blown page refresh whenever you make any change. You've to make some changes in the codebase:
+
+`src/App.tsx` or `src/App.jsx`
+
+```javascript
+// export default hot(App);
+export default App;
+```
+
+Note that you might also need to restart your development server after such a change.
+
 ## Opinions
 
 Although, apps created with `@shaizei/cli` does include sensible defaults when it comes to configurations. But at its heart, every tool is super configurable. Check more about configuring individual tools in pipelines in [Configuring other tools](#configuring-other-tools) section.
