@@ -18,7 +18,7 @@ const freePort = getFreePort(defaultPort);
 
 if (defaultPort !== freePort && process.env.NODE_ENV === 'development') {
   console.log(
-    `\nYour preferred default port (${defaultPort}) is already busy, starting server at ${freePort}.`
+    `\nYour preferred default port (${defaultPort}) is already busy, starting development server at ${freePort}.`
   );
 }
 
