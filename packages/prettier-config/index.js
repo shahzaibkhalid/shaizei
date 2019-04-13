@@ -16,6 +16,7 @@ const prettierConfig = {
   proseWrap: 'always',
   htmlWhitespaceSensitivity: 'css',
   endOfLine: 'auto',
+  quoteProps: 'as-needed'
 };
 
 module.exports = prettierConfig;
