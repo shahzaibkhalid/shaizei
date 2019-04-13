@@ -1,3 +1,35 @@
+## v0.1.0-beta.7 (2019-04-13)
+
+#### :rocket: New Feature
+* `typescript-config`
+  * [#40](https://github.com/shahzaibkhalid/shaizei/pull/40) Add support for incremental TS compilation. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `prettier-config`
+  * [#38](https://github.com/shahzaibkhalid/shaizei/pull/38) Add new `quote-props` option to Prettier config. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `webpack-config`
+  * [#37](https://github.com/shahzaibkhalid/shaizei/pull/37) Implement `fork-ts-checker-webpack-plugin`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `cli`
+  * [#36](https://github.com/shahzaibkhalid/shaizei/pull/36) Expose `type-check` option from CLI. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `scripts`
+  * [#35](https://github.com/shahzaibkhalid/shaizei/pull/35) Add `type-check` script for TS projects. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :bug: Bug Fix
+* `webpack-config`
+  * [#32](https://github.com/shahzaibkhalid/shaizei/pull/32) Removed `watchContentBase` from devServer. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :nail_care: Enhancement
+* `eslint-config`, `prettier-config`
+  * [#39](https://github.com/shahzaibkhalid/shaizei/pull/39) Updating Prettier version to 1.17.0 ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `webpack-config`
+  * [#34](https://github.com/shahzaibkhalid/shaizei/pull/34) Update message log for default port unavailability. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#33](https://github.com/shahzaibkhalid/shaizei/pull/33) Remove `ts-loader` completely. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :house: Internal
+* `babel-preset`
+  * [#41](https://github.com/shahzaibkhalid/shaizei/pull/41) Refactored babel-preset codebase. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## v0.1.0-beta.6 (2019-04-10)
 
 #### :rocket: New Feature
