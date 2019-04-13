@@ -1,7 +1,7 @@
 const loadJSONFIle = require('load-json-file');
 const path = require('path');
 
-const shaizeiBabelPreset = (context, options = {}) => {
+const shaizeiBabelPreset = () => {
   const env = process.env.BABEL_ENV || process.env.NODE_ENV;
   const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
 
