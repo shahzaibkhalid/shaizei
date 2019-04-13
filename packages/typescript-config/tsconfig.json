@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "incremental": true,
     "allowJs": true,
     "noEmit": false,
     "isolatedModules": true,
