@@ -55,7 +55,7 @@ program
     '\n'
   );
   require('@shaizei/scripts').develop();
-})
+});
 
 program
 .command('lint')
@@ -176,6 +176,7 @@ program
 .alias('tc')
 .description(`Type-Check your TypeScript code.`)
 .action(() => {
+  entryValidation();
   validateIfTypeScriptApp();
   console.log(
     '\n' +
