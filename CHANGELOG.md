@@ -1,3 +1,32 @@
+## v0.1.0-beta.8 (2019-04-14)
+
+#### :bug: Bug Fix
+* `cli`
+  * [#47](https://github.com/shahzaibkhalid/shaizei/pull/47) Fix entry-level missing validation. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `prettier-config`
+  * [#46](https://github.com/shahzaibkhalid/shaizei/pull/46) Fix metadata details (package.json) ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :nail_care: Enhancement
+* `babel-preset`
+  * [#50](https://github.com/shahzaibkhalid/shaizei/pull/50) Remove `babel-plugin-emotion` completely. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `eslint-config`, `typescript-config`, `webpack-config`
+  * [#49](https://github.com/shahzaibkhalid/shaizei/pull/49) Update `typescript` to `v3.4.3`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `babel-preset`, `cli`, `webpack-config`
+  * [#48](https://github.com/shahzaibkhalid/shaizei/pull/48) Remove unused `load-json-file` package. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :house: Internal
+* `webpack-config`
+  * [#45](https://github.com/shahzaibkhalid/shaizei/pull/45) Use `helpers` package in `webpack-config`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `babel-preset`
+  * [#44](https://github.com/shahzaibkhalid/shaizei/pull/44) Use `helpers` package in `babel-preset`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `cli`
+  * [#43](https://github.com/shahzaibkhalid/shaizei/pull/43) Use `helpers` in `cli` package. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `helpers`
+  * [#42](https://github.com/shahzaibkhalid/shaizei/pull/42) Add new `helpers` package. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## v0.1.0-beta.7 (2019-04-13)
 
 #### :rocket: New Feature
