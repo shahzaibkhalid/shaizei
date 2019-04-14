@@ -1,14 +1,8 @@
 const path = require('path');
-const loadJSONFIle = require('load-json-file');
+const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
 const getFreePort = require('../utils/getFreePort.js');
 
-const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
-
-const isHttps = shaizeiConfig.hasOwnProperty('https') ? shaizeiConfig.https : false;
-const shouldShowOverlay = shaizeiConfig.hasOwnProperty('showErrorOverly') ? shaizeiConfig.showErrorOverly : true;
-const defaultPort = shaizeiConfig.hasOwnProperty('defaultPort') ? shaizeiConfig.defaultPort : 3000;
-const host = shaizeiConfig.hasOwnProperty('host') ? shaizeiConfig.host : 'localhost';
-
+const defaultPort = readShaizeiConfig(shaizeiConfigProps.defaultPort);
 const overlayConfig = {
   warnings: true,
   errors: true,
@@ -28,10 +22,10 @@ const serverConfig = {
   hot: true,
   publicPath: '/',
   compress: true,
-  overlay: shouldShowOverlay ? overlayConfig : false,
-  host,
+  overlay: readShaizeiConfig(shaizeiConfigProps.showErrorOverly) ? overlayConfig : false,
+  host: readShaizeiConfig(shaizeiConfigProps.host),
   port: defaultPort === freePort ? defaultPort: freePort,
-  https: isHttps,
+  https: readShaizeiConfig(shaizeiConfigProps.https),
   historyApiFallback: {
     disableDotRule: true,
   },

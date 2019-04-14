@@ -1,18 +1,15 @@
 const path = require('path');
-const loadJSONFIle = require('load-json-file');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const { isCI } = require('ci-info');
-
-const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
+const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
-const shouldUseCSSModules = shaizeiConfig.hasOwnProperty('cssModules') ? shaizeiConfig.cssModules : false;
-const shouldAddCSSSourceMaps = shaizeiConfig.hasOwnProperty('addCSSSourceMaps') ? shaizeiConfig.addCSSSourceMaps : true;
+const shouldUseCSSModules = readShaizeiConfig(shaizeiConfigProps.cssModules);
+const shouldAddCSSSourceMaps = readShaizeiConfig(shaizeiConfigProps.addCSSSourceMaps);
 const conditionalPlugins = [];
 const fileHandlingLoaders = [
   {
@@ -55,7 +52,7 @@ if (!isCI) {
 const baseConfig = {
   context: path.resolve(process.cwd(), 'src'),
   entry: {
-    main:  path.resolve(process.cwd(), 'src', `index.${isTypeScript ? 'tsx' : 'jsx'}`)
+    main:  path.resolve(process.cwd(), 'src', `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`)
   },
   output: {
     path: path.resolve(process.cwd(), 'build'),
@@ -67,7 +64,7 @@ const baseConfig = {
       debug: false,
     }),
     new HtmlWebpackPlugin({
-      title: shaizeiConfig.hasOwnProperty('title') ? shaizeiConfig.title : 'React App | Shaizei',
+      title: readShaizeiConfig(shaizeiConfigProps.title),
       filename: 'index.html',
       template: path.resolve(process.cwd(), 'src', 'index.html'),
       favicon: path.resolve(process.cwd(), 'src', 'assets', 'favicon.ico'),
