@@ -20,6 +20,7 @@
   "private": false,
   "dependencies": {
     "@shaizei/scripts": "^0.1.0-beta.7",
+    "@shaizei/helpers": "^0.1.0-beta.7",
     "chalk": "^2.4.2",
     "commander": "^2.19.0",
     "del": "^4.0.0",

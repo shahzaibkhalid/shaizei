@@ -1,12 +1,7 @@
-/** 
- * There are some rules that must be followed by all the applications created with @shaizei/cli.
- * This file includes validation for all those rules.
-*/
-
 const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
-const loadJSONFIle = require('load-json-file');
+const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
 
 const pathToShaizeiConfig = path.resolve(process.cwd(), 'shaizeirc.json');
 const pathToSrcDir = path.resolve(process.cwd(), 'src');
@@ -17,15 +12,16 @@ const pathToFaviconICO = path.resolve(pathToSrcDir, 'assets', 'favicon.ico');
 const pathToBuild = path.resolve(process.cwd(), 'build');
 const pathToStatsJSON = path.resolve(pathToBuild, 'stats', 'stats.json');
 
-const shaizeiConfig = loadJSONFIle.sync(pathToShaizeiConfig);
-const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
-
 validateIfTypeScriptApp = () => {
-  if (!isTypeScript) {
-    console.error(chalk.red(`Found 'typescript:false' in 'shaizeirc.json'.\nYou can only type-check in a TypeScript project.`));
+  if (!readShaizeiConfig(shaizeiConfigProps.typescript)) {
+    console.error(
+      chalk.red(
+        `Found 'typescript:false' in 'shaizeirc.json'.\nYou can only type-check in a TypeScript project.`
+      )
+    );
     process.exit(1);
   }
-}
+};
 
 const validator = (path, errorList) => {
   if (!fs.existsSync(path)) {
@@ -33,7 +29,7 @@ const validator = (path, errorList) => {
       console.error(chalk.red(err));
     });
     process.exit(1);
-  };
+  }
 };
 
 const entryValidation = () => {
@@ -53,11 +49,11 @@ const entryValidation = () => {
     `Please note that their must be a 'src' directory at the root of the project directory containing application-specific code.`
   ]);
 
-  if (isTypeScript) {
+  if (readShaizeiConfig(shaizeiConfigProps.typescript)) {
     validator(pathToIndexTSX, [
       `Error: Unable to find 'index.tsx'`,
       ...indexJSXTSXErrors
-    ])
+    ]);
   } else {
     validator(pathToIndexJSX, [
       `Error: Unable to find 'index.jsx'`,
@@ -75,7 +71,7 @@ const entryValidation = () => {
     `1) 'favicon.ico' must live at the root of 'assets' directory.`,
     `2) 'assets' directory must live at the root of 'src' directory.`
   ]);
-}
+};
 
 const validateBuildDirExists = () => {
   validator(pathToBuild, [
