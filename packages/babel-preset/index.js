@@ -1,12 +1,9 @@
-const loadJSONFIle = require('load-json-file');
-const path = require('path');
+const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
 
 const shaizeiBabelPreset = () => {
   const env = process.env.BABEL_ENV || process.env.NODE_ENV;
-  const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
-
-  const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
-  const isEmotion = shaizeiConfig.hasOwnProperty('emotion') ? shaizeiConfig.emotion : false;
+  const isTypeScript = readShaizeiConfig(shaizeiConfigProps.typescript);
+  const isEmotion = readShaizeiConfig(shaizeiConfigProps.emotion);
 
   const browserlistDev = [
     'last 2 chrome versions',
