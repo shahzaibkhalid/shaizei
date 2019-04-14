@@ -32,6 +32,8 @@ This repo contains several packages to develop and build scalable React.js apps.
 
 * [@shaizei/webpack-config](./packages/webpack-config/README.md) - This package contains shareable webpack configuration used by the applications created with @shaizei/cli.
 
+* [@shaizei/helpers](./packages/helpers/README.md) - This package contains common helper utilities for `shaizei` core.
+
 # Getting Started
 
 ## Installation
