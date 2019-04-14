@@ -153,7 +153,8 @@ As `shaizei` uses Babel to convert TypeScript to JavaScript, so Babel just strip
 
 - **emotion** (boolean: `false`)  
 In order to add support for [emotion](https://emotion.sh) (a CSS-In-JS library) turn this flag to `true`.
-Note that if you're using TypeScript, you should also add `@emotion/core` inside the `types` array in `tsconfig.json`.
+  * Only tooling for Emotion is pre-configured, you must add the production dependencies like `@emotion/core` and `@emotion/styled` as per need.
+  * If you're using TypeScript, you should also add `@emotion/core` inside the `types` array in `tsconfig.json`.
 
 - **title** (string: `React App | Shaizei`)  
 Change this option to change the document title.
