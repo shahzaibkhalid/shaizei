@@ -34,7 +34,6 @@
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "babel-plugin-emotion": "^10.0.9",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "load-json-file": "^5.2.0",
     "react-hot-loader": "^4.8.0"
   },
   "publishConfig": {
