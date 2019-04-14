@@ -5,15 +5,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const loadJSONFIle = require('load-json-file');
 const { isCI } = require('ci-info');
+const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
 
-const shaizeiConfig = loadJSONFIle.sync(path.resolve(process.cwd(), 'shaizeirc.json'));
-
-const shouldAddJSSourceMaps = shaizeiConfig.hasOwnProperty('addJSSourceMaps') ? shaizeiConfig.addJSSourceMaps : true;
-const shouldAddCSSSourceMaps = shaizeiConfig.hasOwnProperty('addCSSSourceMaps') ? shaizeiConfig.addCSSSourceMaps : true;
-const isTypeScript = shaizeiConfig.hasOwnProperty('typescript') ? shaizeiConfig.typescript : false;
-const prodSourceMap = shaizeiConfig.hasOwnProperty('webpackProdSourceMap') ? shaizeiConfig.webpackProdSourceMap : 'source-map';
+const shouldAddJSSourceMaps = readShaizeiConfig(shaizeiConfigProps.addJSSourceMaps);
 const conditionalPlugins = [];
 
 if (!isCI) {
@@ -31,8 +26,8 @@ if (!isCI) {
 const webpackProdConfig = {
   mode: 'production',
   bail: true,
-  devtool: shouldAddJSSourceMaps ? prodSourceMap : false,
-  entry: path.resolve(process.cwd(), 'src', `index.${isTypeScript ? 'tsx' : 'jsx'}`),
+  devtool: shouldAddJSSourceMaps ? readShaizeiConfig(shaizeiConfigProps.webpackProdSourceMap) : false,
+  entry: path.resolve(process.cwd(), 'src', `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`),
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
@@ -85,7 +80,7 @@ const webpackProdConfig = {
         assetNameRegExp: /\.css$/g,
         cssProcessor: require('cssnano'),
         cssProcessorOptions: {
-          map: shouldAddCSSSourceMaps ? {
+          map: readShaizeiConfig(shaizeiConfigProps.addCSSSourceMaps) ? {
             inline: false,
             annotation: true
           } : false,
