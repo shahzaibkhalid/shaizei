@@ -37,6 +37,9 @@ It will fix Prettier formatting issues that were reported by `prettier` command.
 * **eslint-prettier-integration**  
 It will check and warn if ESLint and Prettier have any contradicting rules.
 
+* **type-check**  
+It will type-check the TypeScript code and log results to the console. (in case the project is React-TypeScript)
+
 ## Running Task Scripts
 
 You need to install `@shaizei/cli` in order to run the above mentioned scripts. Take a look at [@shaizei/cli](https://www.npmjs.com/package/@shaizei/cli) to learn more on how to install it. Apps created with `@shaizei/cli` comes pre-configured with these scripts.
