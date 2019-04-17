@@ -1,4 +1,3 @@
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -6,18 +5,19 @@ const TerserPlugin = require('terser-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { isCI } = require('ci-info');
-const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
+const { readShaizeiConfig, shaizeiConfigProps, resolveCWD, commonIdent } = require('@shaizei/helpers');
 
 const shouldAddJSSourceMaps = readShaizeiConfig(shaizeiConfigProps.addJSSourceMaps);
 const conditionalPlugins = [];
+const { stats, report, statsJSON, src } = commonIdent;
 
 if (!isCI) {
   conditionalPlugins.push(
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       generateStatsFile: true,
-      reportFilename: 'stats/report.html',
-      statsFilename: 'stats/stats.json',
+      reportFilename: `${stats}/${report}`,
+      statsFilename: `${stats}/${statsJSON}`,
       openAnalyzer: false,
     })
   );
@@ -27,7 +27,7 @@ const webpackProdConfig = {
   mode: 'production',
   bail: true,
   devtool: shouldAddJSSourceMaps ? readShaizeiConfig(shaizeiConfigProps.webpackProdSourceMap) : false,
-  entry: path.resolve(process.cwd(), 'src', `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`),
+  entry: resolveCWD(src, `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`),
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
@@ -39,7 +39,7 @@ const webpackProdConfig = {
       fileName: 'asset-manifest.json',
     }),
     new CleanWebpackPlugin({
-      root: path.resolve(process.cwd()),
+      root: resolveCWD(),
       allowExternal: false,
       dry: false,
       watch: false,

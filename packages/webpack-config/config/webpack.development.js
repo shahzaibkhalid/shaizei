@@ -1,6 +1,5 @@
-const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
+const { readShaizeiConfig, shaizeiConfigProps, resolveCWD } = require('@shaizei/helpers');
 const devServerConfig = require('./webpack.devServer.js');
 
 const conditionalPlugins = [];
@@ -11,7 +10,7 @@ if (
   ) {
   conditionalPlugins.push(
     new ForkTsCheckerWebpackPlugin({
-      tsconfig: path.resolve(process.cwd(), 'tsconfig.json'),
+      tsconfig: resolveCWD('tsconfig.json'),
       useTypescriptIncrementalApi: true,
       measureCompilationTime: true,
       formatter: 'codeframe',

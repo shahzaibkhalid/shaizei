@@ -1,12 +1,7 @@
 const checkType = () => {
   const spawn = require('cross-spawn');
-
-  spawn.sync('tsc',
-    {
-      shell: true,
-      stdio: 'inherit'
-    }
-  )
-}
+  const spawnOptions = require('../lib/spawnOptions');
+  spawn.sync('tsc' ,spawnOptions);
+};
 
 module.exports = checkType;

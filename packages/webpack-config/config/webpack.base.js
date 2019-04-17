@@ -1,16 +1,17 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const { isCI } = require('ci-info');
-const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
+const { readShaizeiConfig, shaizeiConfigProps, resolveCWD, commonIdent } = require('@shaizei/helpers');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const shouldUseCSSModules = readShaizeiConfig(shaizeiConfigProps.cssModules);
 const shouldAddCSSSourceMaps = readShaizeiConfig(shaizeiConfigProps.addCSSSourceMaps);
 const conditionalPlugins = [];
+const { src, build, indexHTML, assets, faviconICO } = commonIdent;
+const srcDir = resolveCWD(src);
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
@@ -50,12 +51,12 @@ if (!isCI) {
 }
 
 const baseConfig = {
-  context: path.resolve(process.cwd(), 'src'),
+  context: srcDir,
   entry: {
-    main:  path.resolve(process.cwd(), 'src', `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`)
+    main:  resolveCWD(src, `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`),
   },
   output: {
-    path: path.resolve(process.cwd(), 'build'),
+    path: resolveCWD(build),
     filename: 'app.bundle.js',
   },
   plugins: [
@@ -65,9 +66,9 @@ const baseConfig = {
     }),
     new HtmlWebpackPlugin({
       title: readShaizeiConfig(shaizeiConfigProps.title),
-      filename: 'index.html',
-      template: path.resolve(process.cwd(), 'src', 'index.html'),
-      favicon: path.resolve(process.cwd(), 'src', 'assets', 'favicon.ico'),
+      filename: indexHTML,
+      template: resolveCWD(src, indexHTML),
+      favicon: resolveCWD(src, assets, faviconICO),
       inject: true,
       meta: {},
       minify: isProduction,
@@ -159,12 +160,12 @@ const baseConfig = {
       '.jpeg'
     ],
     alias: {
-      src: path.resolve(process.cwd(), 'src')
+      src: srcDir,
     },
-    modules: [path.resolve(process.cwd(), 'src'), 'node_modules'],
+    modules: [srcDir, 'node_modules'],
     plugins: [new DirectoryNamedWebpackPlugin({
       honorIndex: true,
-      include: path.resolve(process.cwd(), 'src')
+      include: srcDir
     })],
   },
 };
