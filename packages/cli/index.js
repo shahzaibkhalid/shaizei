@@ -109,7 +109,7 @@ program
   validateStatsJSONExists();
   console.log(
     '\n' +
-    chalk.yellow('Preparing production bundle and running analyzer...') +
+    chalk.yellow('Running analyzer on production bundle...') +
     '\n'
   );
   require('@shaizei/scripts').analyze();
