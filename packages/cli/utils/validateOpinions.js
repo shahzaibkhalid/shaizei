@@ -15,7 +15,7 @@ validateIfTypeScriptApp = () => {
   if (!readShaizeiConfig(shaizeiConfigProps.typescript)) {
     console.error(
       chalk.red(
-        `Found 'typescript:false' in 'shaizeirc.json'.\nYou can only type-check in a TypeScript project.`
+        `Found 'typescript:false' in 'shaizeirc.json'.\nYou can only type-check in a React-TypeScript project.`
       )
     );
     process.exit(1);
