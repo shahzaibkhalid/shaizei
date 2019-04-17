@@ -1,4 +1,3 @@
-const path = require('path');
 const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
 const getFreePort = require('../utils/getFreePort.js');
 

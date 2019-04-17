@@ -1,16 +1,15 @@
-const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
-const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
-
-const pathToShaizeiConfig = path.resolve(process.cwd(), 'shaizeirc.json');
-const pathToSrcDir = path.resolve(process.cwd(), 'src');
-const pathToIndexJSX = path.resolve(pathToSrcDir, 'index.jsx');
-const pathToIndexTSX = path.resolve(pathToSrcDir, 'index.tsx');
-const pathToIndexHTML = path.resolve(pathToSrcDir, 'index.html');
-const pathToFaviconICO = path.resolve(pathToSrcDir, 'assets', 'favicon.ico');
-const pathToBuild = path.resolve(process.cwd(), 'build');
-const pathToStatsJSON = path.resolve(pathToBuild, 'stats', 'stats.json');
+const { readShaizeiConfig, shaizeiConfigProps, resolveCWD, commonIdent } = require('@shaizei/helpers');
+const { src, indexJSX, indexTSX, indexHTML, assets, faviconICO, shaizeiRC, build, stats, statsJSON } = commonIdent;
+const pathToShaizeiConfig = resolveCWD(shaizeiRC);
+const pathToSrcDir = resolveCWD(src);
+const pathToIndexJSX = resolveCWD(src, indexJSX);
+const pathToIndexTSX = resolveCWD(src, indexTSX);
+const pathToIndexHTML = resolveCWD(src, indexHTML);
+const pathToFaviconICO = resolveCWD(src, assets, faviconICO);
+const pathToBuild = resolveCWD(build);
+const pathToStatsJSON = resolveCWD(build, stats, statsJSON);
 
 validateIfTypeScriptApp = () => {
   if (!readShaizeiConfig(shaizeiConfigProps.typescript)) {
