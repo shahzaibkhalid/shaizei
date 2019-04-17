@@ -10,7 +10,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 const shouldUseCSSModules = readShaizeiConfig(shaizeiConfigProps.cssModules);
 const shouldAddCSSSourceMaps = readShaizeiConfig(shaizeiConfigProps.addCSSSourceMaps);
 const conditionalPlugins = [];
-const srcDir = resolveCWD(commonIdent.src);
+const { src, build, indexHTML, assets, faviconICO } = commonIdent;
+const srcDir = resolveCWD(src);
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
@@ -52,10 +53,10 @@ if (!isCI) {
 const baseConfig = {
   context: srcDir,
   entry: {
-    main:  resolveCWD(commonIdent.src, `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`),
+    main:  resolveCWD(src, `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`),
   },
   output: {
-    path: resolveCWD(commonIdent.build),
+    path: resolveCWD(build),
     filename: 'app.bundle.js',
   },
   plugins: [
@@ -65,9 +66,9 @@ const baseConfig = {
     }),
     new HtmlWebpackPlugin({
       title: readShaizeiConfig(shaizeiConfigProps.title),
-      filename: commonIdent.indexHTML,
-      template: resolveCWD(commonIdent.src, commonIdent.indexHTML),
-      favicon: resolveCWD(commonIdent.src, commonIdent.assets, commonIdent.faviconICO),
+      filename: indexHTML,
+      template: resolveCWD(src, indexHTML),
+      favicon: resolveCWD(src, assets, faviconICO),
       inject: true,
       meta: {},
       minify: isProduction,
