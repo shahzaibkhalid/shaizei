@@ -1,3 +1,25 @@
+## v0.1.0-beta.9 (2019-04-18)
+
+#### :bug: Bug Fix
+* `typescript-config`
+  * [#56](https://github.com/shahzaibkhalid/shaizei/pull/56) Fix the `outDir` flag of tsconfig options. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `eslint-config`
+  * [#55](https://github.com/shahzaibkhalid/shaizei/pull/55) Fix `package.json` typo. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `cli`
+  * [#54](https://github.com/shahzaibkhalid/shaizei/pull/54) Fix the log message for `analyzer` script. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#53](https://github.com/shahzaibkhalid/shaizei/pull/53) Fix error message of React-TypeScript validation. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :nail_care: Enhancement
+* `cli`, `helpers`, `scripts`, `webpack-config`
+  * [#52](https://github.com/shahzaibkhalid/shaizei/pull/52) Centralize more-reusable code, reduce redundancy. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :memo: Documentation
+* `scripts`
+  * [#51](https://github.com/shahzaibkhalid/shaizei/pull/51) Add details of `type-check` script. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## v0.1.0-beta.8 (2019-04-14)
 
 #### :bug: Bug Fix
