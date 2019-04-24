@@ -6,7 +6,7 @@ const { resolveCWD } = require('@shaizei/helpers');
 const renameClonedRepo = require('./renameClonedRepo');
 
 const createApp = (projectName ,isTypeScript, jsStarterName, tsStarterName, jsStarterURL, tsStarterURL, spawnOptions, prefix) => {
-  console.log(prefix, chalk.magenta(`Creating new directory ${chalk.blue(projectName)}...`));
+  console.log(prefix, chalk.magenta(`Creating new ${chalk.blue(projectName)}${isTypeScript ? ' TypeScript' : ''} application...`));
   if (isTypeScript) {
     renameClonedRepo(projectName, tsStarterName, tsStarterURL, spawnOptions);
   } else {
