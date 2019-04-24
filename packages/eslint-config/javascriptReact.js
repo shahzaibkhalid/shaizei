@@ -1,6 +1,8 @@
+const extensions = { extensions: ['.jsx', '.js'] };
+
 const eslintConfigForJS = {
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.js'] }]
+    'react/jsx-filename-extension': [1, ...extensions]
   },
   extends: [
     '@shaizei/eslint-config/utils/commonConfig.js'
@@ -10,11 +12,11 @@ const eslintConfigForJS = {
     'import/resolver': {
       webpack: {
         config: require.resolve('@shaizei/webpack-config/config/webpack.base'),
-        extensions: ['.js', '.jsx']
+        ...extensions
       },
       node: {
         paths: ['src'],
-        extensions: ['.js', '.jsx']
+        ...extensions
       }
     }
   }
