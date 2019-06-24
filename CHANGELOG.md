@@ -1,3 +1,27 @@
+## v0.1.0-beta.10 (2019-06-24)
+
+#### :nail_care: Enhancement
+* `webpack-config`
+  * [#67](https://github.com/shahzaibkhalid/shaizei/pull/67) Update Dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `typescript-config`
+  * [#66](https://github.com/shahzaibkhalid/shaizei/pull/66) Update Dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `eslint-config`
+  * [#65](https://github.com/shahzaibkhalid/shaizei/pull/65) Update `eslint` to v6. 🚀 ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#61](https://github.com/shahzaibkhalid/shaizei/pull/61) Update Dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#58](https://github.com/shahzaibkhalid/shaizei/pull/58) Centralize and re-use the file extensions. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `scripts`
+  * [#64](https://github.com/shahzaibkhalid/shaizei/pull/64) Update Dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `helpers`
+  * [#62](https://github.com/shahzaibkhalid/shaizei/pull/62) Update Dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `cli`
+  * [#60](https://github.com/shahzaibkhalid/shaizei/pull/60) Update Dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#57](https://github.com/shahzaibkhalid/shaizei/pull/57) Update the project creation message. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `babel-preset`
+  * [#59](https://github.com/shahzaibkhalid/shaizei/pull/59) Updating dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## v0.1.0-beta.9 (2019-04-18)
 
 #### :bug: Bug Fix
