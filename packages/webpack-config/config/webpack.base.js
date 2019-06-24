@@ -94,12 +94,13 @@ const baseConfig = {
             options: {
               url: true,
               import: true,
-              modules: shouldUseCSSModules,
-              localIdentName: '[name]-[hash:base64:5]',
+              modules: shouldUseCSSModules ? {
+                localIdentName: '[name]-[hash:base64:5]',
+              }: false,
               sourceMap: shouldAddCSSSourceMaps,
-              camelCase: shouldUseCSSModules,
+              localsConvention: shouldUseCSSModules ? 'camelCase' : 'asIs',
               importLoaders: false,
-              exportOnlyLocals: false,
+              onlyLocals: shouldUseCSSModules ? true : false
             },
           },
         ]
