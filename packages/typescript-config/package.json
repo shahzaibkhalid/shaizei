@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/typescript-config",
-  "version": "0.1.0-beta.9",
+  "version": "0.1.0-beta.10",
   "description": "This package contains shareable TypeScript compiler configuration used by the applications created with @shaizei/cli.",
   "main": "tsconfig.json",
   "repository": {

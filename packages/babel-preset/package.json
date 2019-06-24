@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/babel-preset",
-  "version": "0.1.0-beta.9",
+  "version": "0.1.0-beta.10",
   "description": "This package contains shareable babel.js configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {
@@ -31,7 +31,7 @@
     "@babel/runtime": "^7.4.5",
     "@babel/runtime-corejs2": "^7.4.5",
     "@emotion/babel-preset-css-prop": "^10.0.9",
-    "@shaizei/helpers": "^0.1.0-beta.9",
+    "@shaizei/helpers": "^0.1.0-beta.10",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "react-hot-loader": "^4.11.1"
   },
