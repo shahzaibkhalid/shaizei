@@ -2,7 +2,7 @@ const extensions = { extensions: ['.jsx', '.js'] };
 
 const eslintConfigForJS = {
   rules: {
-    'react/jsx-filename-extension': [1, ...extensions]
+    'react/jsx-filename-extension': [1, extensions]
   },
   extends: [
     '@shaizei/eslint-config/utils/commonConfig.js'
