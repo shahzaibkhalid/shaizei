@@ -23,7 +23,7 @@
     "@shaizei/scripts": "^0.1.0-beta.10",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
-    "del": "^4.1.1"
+    "del": "^5.0.0"
   },
   "bin": {
     "shaizei": "index.js"
