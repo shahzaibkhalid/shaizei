@@ -1,3 +1,27 @@
+## v0.1.0-beta.11 (2019-07-09)
+
+#### :bug: Bug Fix
+* `eslint-config`
+  * [#68](https://github.com/shahzaibkhalid/shaizei/pull/68) Fix breaking rule: `react/jsx-filename-extension` ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :nail_care: Enhancement
+* `eslint-config`
+  * [#75](https://github.com/shahzaibkhalid/shaizei/pull/75) Update `eslint` to `v6.0.1`. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#71](https://github.com/shahzaibkhalid/shaizei/pull/71) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `webpack-config`
+  * [#74](https://github.com/shahzaibkhalid/shaizei/pull/74) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `typescript-config`
+  * [#73](https://github.com/shahzaibkhalid/shaizei/pull/73) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `scripts`
+  * [#72](https://github.com/shahzaibkhalid/shaizei/pull/72) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `cli`
+  * [#70](https://github.com/shahzaibkhalid/shaizei/pull/70) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `babel-preset`
+  * [#69](https://github.com/shahzaibkhalid/shaizei/pull/69) Update dependencies. ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## v0.1.0-beta.10 (2019-06-24)
 
 #### :nail_care: Enhancement
