@@ -2,7 +2,7 @@ const fs = require('fs');
 const del = require('del');
 const { spawnSync } = require('child_process');
 const chalk = require('chalk');
-const { resolveCWD } = require('@shaizei/helpers');
+const { resolveCurrentWorkingDir } = require('@shaizei/helpers');
 const renameClonedRepo = require('./renameClonedRepo');
 
 const createApp = (projectName ,isTypeScript, jsStarterName, tsStarterName, jsStarterURL, tsStarterURL, spawnOptions, prefix) => {
@@ -13,9 +13,9 @@ const createApp = (projectName ,isTypeScript, jsStarterName, tsStarterName, jsSt
     renameClonedRepo(projectName, jsStarterName, jsStarterURL, spawnOptions);
   }
   del.sync(
-    resolveCWD(projectName, '.git')
+    resolveCurrentWorkingDir(projectName, '.git')
   );
-  const pathToPackageJSON = resolveCWD(projectName, 'package.json');
+  const pathToPackageJSON = resolveCurrentWorkingDir(projectName, 'package.json');
   const packageJSON = JSON.parse(fs.readFileSync(pathToPackageJSON));
   packageJSON.name = projectName;
   delete packageJSON.description;

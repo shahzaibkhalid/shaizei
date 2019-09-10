@@ -1,18 +1,18 @@
 const fs = require('fs');
 const chalk = require('chalk');
-const { readShaizeiConfig, shaizeiConfigProps, resolveCWD, commonIdent } = require('@shaizei/helpers');
-const { src, indexJSX, indexTSX, indexHTML, assets, faviconICO, shaizeiRC, build, stats, statsJSON } = commonIdent;
-const pathToShaizeiConfig = resolveCWD(shaizeiRC);
-const pathToSrcDir = resolveCWD(src);
-const pathToIndexJSX = resolveCWD(src, indexJSX);
-const pathToIndexTSX = resolveCWD(src, indexTSX);
-const pathToIndexHTML = resolveCWD(src, indexHTML);
-const pathToFaviconICO = resolveCWD(src, assets, faviconICO);
-const pathToBuild = resolveCWD(build);
-const pathToStatsJSON = resolveCWD(build, stats, statsJSON);
+const { findConfig, configKeys, resolveCurrentWorkingDir, standardFiles } = require('@shaizei/helpers');
+const { src, indexJSX, indexTSX, indexHTML, assets, faviconICO, shaizeiRC, build, stats, statsJSON } = standardFiles;
+const pathToShaizeiConfig = resolveCurrentWorkingDir(shaizeiRC);
+const pathToSrcDir = resolveCurrentWorkingDir(src);
+const pathToIndexJSX = resolveCurrentWorkingDir(src, indexJSX);
+const pathToIndexTSX = resolveCurrentWorkingDir(src, indexTSX);
+const pathToIndexHTML = resolveCurrentWorkingDir(src, indexHTML);
+const pathToFaviconICO = resolveCurrentWorkingDir(src, assets, faviconICO);
+const pathToBuild = resolveCurrentWorkingDir(build);
+const pathToStatsJSON = resolveCurrentWorkingDir(build, stats, statsJSON);
 
 validateIfTypeScriptApp = () => {
-  if (!readShaizeiConfig(shaizeiConfigProps.typescript)) {
+  if (!findConfig(configKeys.typescript)) {
     console.error(
       chalk.red(
         `Found 'typescript:false' in 'shaizeirc.json'.\nYou can only type-check in a React-TypeScript project.`
@@ -48,7 +48,7 @@ const entryValidation = () => {
     `Please note that their must be a 'src' directory at the root of the project directory containing application-specific code.`
   ]);
 
-  if (readShaizeiConfig(shaizeiConfigProps.typescript)) {
+  if (findConfig(configKeys.typescript)) {
     validator(pathToIndexTSX, [
       `Error: Unable to find 'index.tsx'`,
       ...indexJSXTSXErrors
