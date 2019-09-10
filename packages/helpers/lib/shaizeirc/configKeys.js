@@ -1,4 +1,4 @@
-const shaizeiConfigProps = {
+const configKeys = {
   typescript: 'typescript',
   showErrorOverly: 'showErrorOverly',
   emitLintingErrors: 'emitLintingErrors',
@@ -15,4 +15,4 @@ const shaizeiConfigProps = {
   title: 'title'
 };
 
-module.exports = shaizeiConfigProps;
+module.exports = configKeys;

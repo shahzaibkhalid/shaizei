@@ -1,4 +1,4 @@
-const commonIdent = {
+const standardFiles = {
   indexJSX: 'index.jsx',
   indexTSX: 'index.tsx',
   indexHTML: 'index.html',
@@ -12,4 +12,4 @@ const commonIdent = {
   report: 'report.html',
 };
 
-module.exports = commonIdent;
+module.exports = standardFiles;
