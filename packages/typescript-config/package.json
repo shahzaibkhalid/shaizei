@@ -29,10 +29,7 @@
   ],
   "types": "./lib/react-app.d.ts",
   "dependencies": {
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-redux": "^7.1.1",
-    "typescript": "^3.5.2"
+    "typescript": "^3.6.2"
   },
   "publishConfig": {
     "access": "public"
