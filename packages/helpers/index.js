@@ -1,11 +1,11 @@
-const readShaizeiConfig = require('./lib/shaizeirc/readShaizeiConfig');
-const shaizeiConfigProps = require('./lib/shaizeirc/shaizeiConfigProps');
-const resolveCWD = require('./lib/path/resolveCWD');
-const commonIdent = require('./lib/commonIdent');
+const findConfig = require('./lib/shaizeirc/findConfig');
+const configKeys = require('./lib/shaizeirc/configKeys');
+const resolveCurrentWorkingDir = require('./lib/path/resolveCurrentWorkingDir');
+const standardFiles = require('./lib/standardFiles');
 
 module.exports = {
-  readShaizeiConfig,
-  shaizeiConfigProps,
-  resolveCWD,
-  commonIdent,
+  findConfig,
+  configKeys,
+  resolveCurrentWorkingDir,
+  standardFiles,
 };

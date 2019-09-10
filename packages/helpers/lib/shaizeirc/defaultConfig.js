@@ -1,4 +1,4 @@
-const defaultShaizeiConfig = {
+const defaultConfig = {
   typescript: false,
   showErrorOverly: true,
   emitLintingErrors: false,
@@ -15,4 +15,4 @@ const defaultShaizeiConfig = {
   title: 'React App | Shaizei'
 };
 
-module.exports = defaultShaizeiConfig;
+module.exports = defaultConfig;
