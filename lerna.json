@@ -17,7 +17,7 @@
       "enhancement": ":nail_care: Enhancement",
       "documentation": ":memo: Documentation",
       "internal": ":house: Internal",
-      "underlying tools": ":hammer: Underlying Tools"
+      "refactor": ":hammer: Refactor"
     },
     "cacheDir": ".changelog"
   },
