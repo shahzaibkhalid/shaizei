@@ -1,10 +1,9 @@
 const analyze = () => {
-  const spawn = require('cross-spawn');
-  const { commonIdent } = require('@shaizei/helpers');
+  const { sync } = require('cross-spawn');
+  const { standardFiles: { stats, build, statsJSON } } = require('@shaizei/helpers');
   const spawnOptions = require('../lib/spawnOptions');
-  const { stats, build, statsJSON } = commonIdent;
-  
-  spawn.sync(
+
+  sync(
     `./node_modules/@shaizei/webpack-config/node_modules/.bin/webpack-bundle-analyzer ${build}/${stats}/${statsJSON} ${build}`,
     spawnOptions
   );

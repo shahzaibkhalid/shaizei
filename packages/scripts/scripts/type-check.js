@@ -1,7 +1,7 @@
 const checkType = () => {
-  const spawn = require('cross-spawn');
+  const { sync } = require('cross-spawn');
   const spawnOptions = require('../lib/spawnOptions');
-  spawn.sync('tsc' ,spawnOptions);
+  sync('tsc' ,spawnOptions);
 };
 
 module.exports = checkType;

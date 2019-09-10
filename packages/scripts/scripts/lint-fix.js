@@ -1,10 +1,9 @@
 const lintFix = () => {
-  const spawn = require('cross-spawn');
+  const { sync } = require('cross-spawn');
   const spawnOptions = require('../lib/spawnOptions');
-  const { commonIdent } = require('@shaizei/helpers');
-  const { src } = commonIdent;
+  const { standardFiles: { src } } = require('@shaizei/helpers');
 
-  spawn.sync(
+  sync(
     `./node_modules/@shaizei/eslint-config/node_modules/.bin/eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx '${src}/'`,
     spawnOptions
   );
