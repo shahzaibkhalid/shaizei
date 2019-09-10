@@ -5,7 +5,7 @@ const eslintConfigForJS = {
     'react/jsx-filename-extension': [1, extensions]
   },
   extends: [
-    '@shaizei/eslint-config/utils/commonConfig.js'
+    './utils/commonConfig.js'
   ],
   parser: 'babel-eslint',
   settings: {

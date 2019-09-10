@@ -1,6 +1,7 @@
 const commonConfig = {
+  noInlineConfig: true,
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: 'module',
     ecmaFeatures: {
       arrowFunctions: true,
@@ -28,6 +29,7 @@ const commonConfig = {
     serviceworker: true,
     jest: true,
     es6: true,
+    worker: true,
   },
   plugins: [
     'react',
@@ -59,7 +61,8 @@ const commonConfig = {
     'emotion/styled-import': 'error',
     'emotion/syntax-preference': [2, 'object'],
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
+    'filenames/match-exported': [2, 'camel'],
   }
 };
 

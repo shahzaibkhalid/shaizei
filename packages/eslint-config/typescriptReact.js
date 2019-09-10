@@ -13,7 +13,7 @@ const eslintConfigForTS = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
-    '@shaizei/eslint-config/utils/commonConfig.js'
+    './utils/commonConfig.js'
   ],
   parser: '@typescript-eslint/parser',
   settings: {
