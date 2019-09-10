@@ -1,16 +1,16 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const { readShaizeiConfig, shaizeiConfigProps, resolveCWD } = require('@shaizei/helpers');
+const { findConfig, configKeys, resolveCurrentWorkingDir } = require('@shaizei/helpers');
 const devServerConfig = require('./webpack.devServer.js');
 
 const conditionalPlugins = [];
 
 if (
-    readShaizeiConfig(shaizeiConfigProps.typescript) &&
-    readShaizeiConfig(shaizeiConfigProps.typeCheck)
+    findConfig(configKeys.typescript) &&
+    findConfig(configKeys.typeCheck)
   ) {
   conditionalPlugins.push(
     new ForkTsCheckerWebpackPlugin({
-      tsconfig: resolveCWD('tsconfig.json'),
+      tsconfig: resolveCurrentWorkingDir('tsconfig.json'),
       useTypescriptIncrementalApi: true,
       measureCompilationTime: true,
       formatter: 'codeframe',
@@ -20,14 +20,14 @@ if (
 
 const webpackDevConfig = {
   mode: 'development',
-  devtool: readShaizeiConfig(shaizeiConfigProps.webpackDevSourceMap),
+  devtool: findConfig(configKeys.webpackDevSourceMap),
   devServer: devServerConfig,
   plugins: [
     ...conditionalPlugins,
   ],
   module: {
     rules: [
-      readShaizeiConfig(shaizeiConfigProps.emitLintingErrors) ? {
+      findConfig(configKeys.emitLintingErrors) ? {
         enforce: 'pre',
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: [/(node_modules|bower_components)/],

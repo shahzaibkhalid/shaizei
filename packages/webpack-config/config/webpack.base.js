@@ -4,14 +4,19 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const { isCI } = require('ci-info');
-const { readShaizeiConfig, shaizeiConfigProps, resolveCWD, commonIdent } = require('@shaizei/helpers');
+const { findConfig,
+  configKeys,
+  resolveCurrentWorkingDir,
+  standardFiles: {
+    src, build, indexHTML, assets, faviconICO
+  }
+} = require('@shaizei/helpers');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const shouldUseCSSModules = readShaizeiConfig(shaizeiConfigProps.cssModules);
-const shouldAddCSSSourceMaps = readShaizeiConfig(shaizeiConfigProps.addCSSSourceMaps);
+const shouldUseCSSModules = findConfig(configKeys.cssModules);
+const shouldAddCSSSourceMaps = findConfig(configKeys.addCSSSourceMaps);
 const conditionalPlugins = [];
-const { src, build, indexHTML, assets, faviconICO } = commonIdent;
-const srcDir = resolveCWD(src);
+const srcDir = resolveCurrentWorkingDir(src);
 const fileHandlingLoaders = [
   {
     loader: 'file-loader',
@@ -29,15 +34,7 @@ const primaryJSTSxLoaders = [
 ];
 
 const styleLoader = {
-  loader: isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-  options: isProduction ? {} : {
-    hmr: true,
-    attrs: {},
-    insertAt: 'top',
-    singleton: true,
-    sourceMap: shouldAddCSSSourceMaps,
-    convertToAbsoluteUrls: shouldAddCSSSourceMaps,
-  },
+  loader: isProduction ? MiniCssExtractPlugin.loader : 'style-loader'
 };
 
 if (isProduction) {
@@ -53,10 +50,10 @@ if (!isCI) {
 const baseConfig = {
   context: srcDir,
   entry: {
-    main:  resolveCWD(src, `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`),
+    main:  resolveCurrentWorkingDir(src, `index.${findConfig(configKeys.typescript) ? 'tsx' : 'jsx'}`),
   },
   output: {
-    path: resolveCWD(build),
+    path: resolveCurrentWorkingDir(build),
     filename: 'app.bundle.js',
   },
   plugins: [
@@ -65,10 +62,10 @@ const baseConfig = {
       debug: false,
     }),
     new HtmlWebpackPlugin({
-      title: readShaizeiConfig(shaizeiConfigProps.title),
+      title: findConfig(configKeys.title),
       filename: indexHTML,
-      template: resolveCWD(src, indexHTML),
-      favicon: resolveCWD(src, assets, faviconICO),
+      template: resolveCurrentWorkingDir(src, indexHTML),
+      favicon: resolveCurrentWorkingDir(src, assets, faviconICO),
       inject: true,
       meta: {},
       minify: isProduction,

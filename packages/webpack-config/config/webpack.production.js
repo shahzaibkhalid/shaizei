@@ -5,11 +5,14 @@ const TerserPlugin = require('terser-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { isCI } = require('ci-info');
-const { readShaizeiConfig, shaizeiConfigProps, resolveCWD, commonIdent } = require('@shaizei/helpers');
+const {
+  findConfig,
+  configKeys, resolveCurrentWorkingDir,
+  standardFiles: { stats, report, statsJSON, src }
+} = require('@shaizei/helpers');
 
-const shouldAddJSSourceMaps = readShaizeiConfig(shaizeiConfigProps.addJSSourceMaps);
+const shouldAddJSSourceMaps = findConfig(configKeys.addJSSourceMaps);
 const conditionalPlugins = [];
-const { stats, report, statsJSON, src } = commonIdent;
 
 if (!isCI) {
   conditionalPlugins.push(
@@ -26,8 +29,8 @@ if (!isCI) {
 const webpackProdConfig = {
   mode: 'production',
   bail: true,
-  devtool: shouldAddJSSourceMaps ? readShaizeiConfig(shaizeiConfigProps.webpackProdSourceMap) : false,
-  entry: resolveCWD(src, `index.${readShaizeiConfig(shaizeiConfigProps.typescript) ? 'tsx' : 'jsx'}`),
+  devtool: shouldAddJSSourceMaps ? findConfig(configKeys.webpackProdSourceMap) : false,
+  entry: resolveCurrentWorkingDir(src, `index.${findConfig(configKeys.typescript) ? 'tsx' : 'jsx'}`),
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
@@ -39,7 +42,7 @@ const webpackProdConfig = {
       fileName: 'asset-manifest.json',
     }),
     new CleanWebpackPlugin({
-      root: resolveCWD(),
+      root: resolveCurrentWorkingDir(),
       allowExternal: false,
       dry: false,
       watch: false,
@@ -72,15 +75,13 @@ const webpackProdConfig = {
             ascii_only: true,
           },
         },
-        cache: true,
-        parallel: true,
         sourceMap: shouldAddJSSourceMaps
       }),
       new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,
         cssProcessor: require('cssnano'),
         cssProcessorOptions: {
-          map: readShaizeiConfig(shaizeiConfigProps.addCSSSourceMaps) ? {
+          map: findConfig(configKeys.addCSSSourceMaps) ? {
             inline: false,
             annotation: true
           } : false,

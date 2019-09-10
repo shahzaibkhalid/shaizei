@@ -1,7 +1,7 @@
-const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
+const { findConfig, configKeys } = require('@shaizei/helpers');
 const getFreePort = require('../utils/getFreePort.js');
 
-const defaultPort = readShaizeiConfig(shaizeiConfigProps.defaultPort);
+const defaultPort = findConfig(configKeys.defaultPort);
 const overlayConfig = {
   warnings: true,
   errors: true,
@@ -21,10 +21,10 @@ const serverConfig = {
   hot: true,
   publicPath: '/',
   compress: true,
-  overlay: readShaizeiConfig(shaizeiConfigProps.showErrorOverly) ? overlayConfig : false,
-  host: readShaizeiConfig(shaizeiConfigProps.host),
+  overlay: findConfig(configKeys.showErrorOverly) ? overlayConfig : false,
+  host: findConfig(configKeys.host),
   port: defaultPort === freePort ? defaultPort: freePort,
-  https: readShaizeiConfig(shaizeiConfigProps.https),
+  https: findConfig(configKeys.https),
   historyApiFallback: {
     disableDotRule: true,
   },
