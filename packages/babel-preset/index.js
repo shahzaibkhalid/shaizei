@@ -1,107 +1,41 @@
-const { readShaizeiConfig, shaizeiConfigProps } = require('@shaizei/helpers');
+const { findConfig, configKeys } = require('@shaizei/helpers');
+const reactHotLoader = require('./src/plugins/reactHotLoader');
+const classProperties = require('./src/plugins/classProperties');
+const dynamicImport = require('./src/plugins/dynamicImport');
+const transformRuntime = require('./src/plugins/transformRuntime');
+const transformReactRemovePropTypes = require('./src/plugins/transformReactRemovePropTypes');
+const react = require('./src/presets/react');
+const env = require('./src/presets/env');
+const typescript = require('./src/presets/typescript');
+const emotionCssProp = require('./src/presets/emotionCssProp');
 
-const shaizeiBabelPreset = () => {
-  const env = process.env.BABEL_ENV || process.env.NODE_ENV;
-  const isTypeScript = readShaizeiConfig(shaizeiConfigProps.typescript);
-  const isEmotion = readShaizeiConfig(shaizeiConfigProps.emotion);
-
-  const browserlistDev = [
-    'last 2 chrome versions',
-    'last 2 firefox versions',
-    'last 2 edge versions'
-  ];
-
-  const browserlistProd = [
-    '>1%',
-    'last 4 versions',
-    'Firefox ESR',
-    'not ie < 1'
-  ];
+function shaizeiBabelPreset() {
+  const NODE_ENV = process.env.BABEL_ENV || process.env.NODE_ENV;
+  const isTypeScript = findConfig(configKeys.typescript);
+  const isEmotion = findConfig(configKeys.emotion);
 
   const plugins = [
-    require('react-hot-loader/babel'),
-    [
-      require.resolve('@babel/plugin-proposal-class-properties'),
-      {
-        loose: false,
-      },  
-    ],
-    [
-      require.resolve('@babel/plugin-proposal-object-rest-spread'),
-      {
-        loose: false,
-        useBuiltIns: false,
-      },  
-    ],
-    require.resolve('@babel/plugin-syntax-dynamic-import'),
+    reactHotLoader(),
+    classProperties(),
+    dynamicImport(),
   ];
 
   const presets = [
-    [
-      require.resolve('@babel/preset-react'),
-      {
-        useBuiltIns: false,
-        development: env === 'development' ? true : false,
-        throwIfNamespace: true,
-      },
-    ],
-    [
-      require.resolve('@babel/preset-env'),
-      {
-        targets: env === 'production' ? browserlistProd : browserlistDev,
-        spec: false,
-        loose: false,
-        modules: false,
-        debug: false,
-        useBuiltIns: 'usage',
-        forceAllTransforms: false,
-        configPath: process.cwd(),
-        ignoreBrowserslistConfig: true,
-        shippedProposals: true,
-        corejs: 2
-      }
-    ],
+    react(NODE_ENV),
+    env(),
   ];
 
-  if (isTypeScript) {
-    presets.push(require.resolve('@babel/preset-typescript'));
-  }
-  // keep emotion preset at the end otherwise it won't work :|
-  if (isEmotion) {
-    presets.push(
-      [
-        require.resolve('@emotion/babel-preset-css-prop'),
-        {
-          sourceMap: true,
-          autoLabel: env === 'development',
-          labelFormat: '[local]',
-          cssPropOptimization: true,
-        }
-      ]
-    );
-  }
+  if (isTypeScript) presets.push(typescript());
+  /**
+   * Keep emotion preset at the end otherwise it won't work!
+   * Source: https://emotion.sh/docs/@emotion/babel-preset-css-prop
+   */
+  if (isEmotion) presets.push(emotionCssProp(NODE_ENV));
 
-  if (env === 'production') {
-    plugins.push(
-      [
-        require.resolve('@babel/plugin-transform-runtime'),
-        {
-          corejs: false,
-          helpers: true,
-          regenerator: true,
-          useESModule: true,
-        }
-      ],
-      [
-        require.resolve('babel-plugin-transform-react-remove-prop-types'),
-        {
-          mode: 'remove',
-          removeImport: true,
-          ignoreFileNames: ['node_modules'],
-        },
-      ]
-    )
-  }
+  if (NODE_ENV === 'production') plugins.push(
+    transformRuntime(),
+    transformReactRemovePropTypes()
+  );
 
   return {
     plugins,
