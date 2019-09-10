@@ -1,9 +1,10 @@
 const prettierConfig = {
-  printWidth: 85,
-  useTabs: false,
+  printWidth: 80,
   tabWidth: 2,
+  useTabs: false,
   semi: true,
   singleQuote: true,
+  quoteProps: 'as-needed',
   jsxSingleQuote: true,
   trailingComma: 'all',
   bracketSpacing: true,
@@ -16,7 +17,6 @@ const prettierConfig = {
   proseWrap: 'always',
   htmlWhitespaceSensitivity: 'css',
   endOfLine: 'auto',
-  quoteProps: 'as-needed'
 };
 
 module.exports = prettierConfig;
