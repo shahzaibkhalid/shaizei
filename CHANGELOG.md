@@ -1,3 +1,59 @@
+## 0.1.0-beta.12 (2019-09-14)
+
+#### :rocket: New Feature
+* `prettier-config`
+  * [#87](https://github.com/shahzaibkhalid/shaizei/pull/87) Bring stylistic updates to Prettier. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+
+#### :nail_care: Enhancement
+* `typescript-config`
+  * [#83](https://github.com/shahzaibkhalid/shaizei/pull/83) typescript-config: Update 'tsconfig.json' file ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+
+#### :hammer: Refactor
+* `webpack-config`
+  * [#81](https://github.com/shahzaibkhalid/shaizei/pull/81) Using ES6 feat. for improved code readability.
+ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `scripts`
+  * [#85](https://github.com/shahzaibkhalid/shaizei/pull/85) Update all scripts for better code-readability. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `helpers`
+  * [#89](https://github.com/shahzaibkhalid/shaizei/pull/89) Refactor to improve code quality ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `cli`
+  * [#93](https://github.com/shahzaibkhalid/shaizei/pull/93) Improve code quality ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `babel-preset`
+  * [#95](https://github.com/shahzaibkhalid/shaizei/pull/95) Use separated plugins & presets ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#94](https://github.com/shahzaibkhalid/shaizei/pull/94) Separate presets & plugins ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+
+
+#### :house: Internal
+* `babel-preset`
+  * [#96](https://github.com/shahzaibkhalid/shaizei/pull/96) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `webpack-config`
+  * [#80](https://github.com/shahzaibkhalid/shaizei/pull/80) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `typescript-config`
+  * [#82](https://github.com/shahzaibkhalid/shaizei/pull/82) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `scripts`
+  * [#84](https://github.com/shahzaibkhalid/shaizei/pull/84) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `helpers`
+  * [#88](https://github.com/shahzaibkhalid/shaizei/pull/88) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `cli`
+  * [#92](https://github.com/shahzaibkhalid/shaizei/pull/92) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `eslint-config`
+  * [#91](https://github.com/shahzaibkhalid/shaizei/pull/91) Update dependencies ⛓ ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+  * [#90](https://github.com/shahzaibkhalid/shaizei/pull/90) Update ESLint rules. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `prettier-config`
+  * [#86](https://github.com/shahzaibkhalid/shaizei/pull/86) Fix Prettier vers. in order to avoid minor/patch stylistic updates. ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* [#97](https://github.com/shahzaibkhalid/shaizei/pull/97) bump mixin-deep from 1.3.1 to 1.3.2 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#79](https://github.com/shahzaibkhalid/shaizei/pull/79) bump lodash from 4.17.11 to 4.17.14 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#78](https://github.com/shahzaibkhalid/shaizei/pull/78) bump lodash.template from 4.4.0 to 4.5.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#77](https://github.com/shahzaibkhalid/shaizei/pull/77) bump js-yaml from 3.12.2 to 3.13.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#76](https://github.com/shahzaibkhalid/shaizei/pull/76) bump handlebars from 4.1.0 to 4.1.2 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+
 ## v0.1.0-beta.11 (2019-07-09)
 
 #### :bug: Bug Fix
