@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/eslint-config",
-  "version": "0.1.0-beta.11",
+  "version": "0.1.0-beta.12",
   "description": "This package contains shareable ESLint configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {
@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "@babel/core": "^7.6.0",
-    "@shaizei/webpack-config": "^0.1.0-beta.11",
+    "@shaizei/webpack-config": "^0.1.0-beta.12",
     "@typescript-eslint/eslint-plugin": "^2.1.0",
     "@typescript-eslint/parser": "^2.1.0",
     "babel-eslint": "^10.0.3",

@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/helpers",
-  "version": "0.1.0-beta.10",
+  "version": "0.1.0-beta.12",
   "description": "This package contains common helper utilities for shaizei core.",
   "main": "index.js",
   "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",

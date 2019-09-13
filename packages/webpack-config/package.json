@@ -1,6 +1,6 @@
 {
   "name": "@shaizei/webpack-config",
-  "version": "0.1.0-beta.11",
+  "version": "0.1.0-beta.12",
   "description": "This package contains shareable webpack configuration used by the applications created with @shaizei/cli.",
   "main": "index.js",
   "repository": {
@@ -31,7 +31,7 @@
   "dependencies": {
     "@babel/core": "^7.6.0",
     "@babel/runtime-corejs3": "^7.6.0",
-    "@shaizei/helpers": "^0.1.0-beta.10",
+    "@shaizei/helpers": "^0.1.0-beta.12",
     "babel-loader": "^8.0.6",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "ci-info": "^2.0.0",
