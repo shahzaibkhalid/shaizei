@@ -1,3 +1,18 @@
+## 0.1.0-beta.13 (2019-09-14)
+
+#### :rocket: New Feature
+* `eslint-config`
+  * [#99](https://github.com/shahzaibkhalid/shaizei/pull/99) Intr. `max-lines` & `max-lines-per-function` ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### :bug: Bug Fix
+ * `scripts`
+   * [#100](https://github.com/shahzaibkhalid/shaizei/pull/100) Throw exit code 1 in case of errors ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+* `typescript-config`
+  * [#98](https://github.com/shahzaibkhalid/shaizei/pull/98) Turn off `no-resolve` to resolve `d.ts` ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
+#### Committers: 1
+- Shahzaib Khalid ([@shahzaibkhalid](https://github.com/shahzaibkhalid))
+
 ## 0.1.0-beta.12 (2019-09-14)
 
 #### :rocket: New Feature
