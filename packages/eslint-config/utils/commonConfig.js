@@ -63,6 +63,16 @@ const commonConfig = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'filenames/match-exported': [2, 'camel'],
+    'max-lines': [2, {
+      max: 100,
+      skipBlankLines: true,
+      skipComments: true,
+    }],
+    'max-lines-per-function': [2, {
+      max: 25,
+      skipBlankLines: true,
+      skipComments: true,
+    }]
   }
 };
 
